@@ -9,18 +9,21 @@
                         <p>Foydalanuvchilar</p>
                     </a>
                 </li>
+
+                <li class="nav-item {{  request()->routeIs('admin.articles') ? 'active' : '' }}">
+                    <a href="{{ route('admin.articles') }}">
+                        <i class="fas fa-user"></i>
+                        <p>Maqolalar</p>
+                    </a>
+                </li>
+
                 <li class="nav-item {{  request()->routeIs('admin.users.index') ? 'active' : '' }}">
                     <a href="{{ route('admin.index') }}">
                         <i class="fas fa-user"></i>
-                        <p>aaaaa</p>
+                        <p>Maqolalar</p>
                     </a>
                 </li>
-                <li class="nav-item {{  request()->routeIs('admin.users.index') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fas fa-user"></i>
-                        <p>wdr</p>
-                    </a>
-                </li>
+
 
 
             </ul>

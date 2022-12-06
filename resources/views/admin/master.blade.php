@@ -68,6 +68,8 @@
     <!-- Sidebar -->
     @include('admin.sidebar')
     <!-- End Sidebar -->
+
+
     <div class="main-panel">
         <div class="content">
 
