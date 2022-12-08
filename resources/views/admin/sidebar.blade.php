@@ -17,10 +17,10 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{  request()->routeIs('admin.users.index') ? 'active' : '' }}">
-                    <a href="{{ route('admin.index') }}">
+                <li class="nav-item {{  request()->routeIs('admin.books') ? 'active' : '' }}">
+                    <a href="{{ route('admin.books') }}">
                         <i class="fas fa-user"></i>
-                        <p>Maqolalar</p>
+                        <p>Kitoblar</p>
                     </a>
                 </li>
 

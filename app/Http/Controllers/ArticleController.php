@@ -91,7 +91,6 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
 
-
         if ($request->file != null) {
             $image = $request->file;
             $imagename = time() . '.' . $image->getClientOriginalExtension();
