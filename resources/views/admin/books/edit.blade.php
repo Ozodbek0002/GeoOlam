@@ -9,6 +9,19 @@
                 <hr>
                 <div class="card-body">
 
+<<<<<<< HEAD
+=======
+{{--                    @if ($errors->any())--}}
+{{--                        <div class="alert alert-danger">--}}
+{{--                            <strong> Xatolik!.. </strong>--}}
+{{--                            <ul>--}}
+{{--                                @foreach ($errors->all() as $error)--}}
+{{--                                    <li>{{ $error }}</li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+>>>>>>> origin/master
 
 
                     <form action="{{route('admin.books.update',$book->id)}}" method="POST" accept-charset="UTF-8"
