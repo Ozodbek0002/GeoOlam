@@ -14,7 +14,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $data = Book::paginate(10);
+        return view('admin.books.index',[
+            'books'=>$data
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.books.create');
     }
 
     /**
@@ -35,7 +38,39 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Book();
+
+        $book = $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'author'=>'required',
+            'image'=>'required',
+            'file'=>'required',
+        ],[
+            'title.required'=>'Iltimos kitob tomini kiriting.',
+            'description.required'=>'Iltimos qisqacha izoh yozing.',
+            'author.required'=>'Iltimos kitob muallifini kiriting.',
+            'image.required'=>'Iltimos rasm yuklang.',
+            'file.required'=>'Iltimos kitob faylini yuklang.',
+        ]);
+        $data->title = $book['title'];
+        $data->description = $book['description'];
+        $data->author = $book['author'];
+        $data->category = $request->category;
+
+        $image = $request->image;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->image->move('books', $imagename);
+        $data->image = $imagename;
+
+        $file = $request->file;
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $request->file->move('books', $filename);
+        $data->file = $filename;
+
+        $data->save();
+
+        return redirect()->route('admin.books');
     }
 
     /**
@@ -57,7 +92,9 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('admin.books.edit',[
+            'book'=>$book
+        ]);
     }
 
     /**
@@ -69,7 +106,27 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $book->title = $request->title;
+        $book->description = $request->description;
+        $book->author = $request->author;
+
+        if ($request->image != null) {
+            $image = $request->image;
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('books', $imagename);
+            $book->image = $imagename;
+        };
+
+        if ($request->file != null) {
+            $file = $request->file;
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $request->file->move('books', $filename);
+            $book->file = $filename;
+        };
+
+        $book->save();
+        return redirect()->route('admin.books');
+
     }
 
     /**
@@ -80,6 +137,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->route('admin.books');
     }
 }
