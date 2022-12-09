@@ -4,10 +4,11 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Maqola qo`shish </h1></div>
+                    <div class="col-10"><h1 class="card-title">Kitob qo`shish </h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
+
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -21,7 +22,7 @@
                     @endif
 
 
-                    <form action="{{route('admin.articles.store')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                    <form action="{{route('admin.books.store')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                         @csrf
 
 
@@ -30,31 +31,48 @@
                             <label for=""> Kategoriyasi </label>
                             <select name="category" id="like_to" class="form-control">
                                 <option value="uz">Uzbekcha</option>
-                                <option value="en" >Inglischa</option>
+                                <option value="en" >Inglizcha</option>
                                 <option value="ru" >Ruscha</option>
                             </select>
 
                         </div>
 
                         <div class="form-group">
-                            <label for=""> Maqola nomi</label>
-                            <input type="text" name="title" value="{{old('title')}}" class="form-control">
+                            <label for="title"> Kitob nomi</label>
+                            <input type="text" id="title" name="title" value="{{old( 'title')}}" class="form-control" >
                             @error('title')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="desc_ru">Qisqacha izoh</label>
-                            <textarea class="form-control" name="description" id="text_ru"  rows="4" >{{old('description')}}</textarea>
+                            <label for="description ">Qisqacha izoh</label>
+                            <textarea class="form-control" name="description" id="description"  rows="4" >{{old('description')}}</textarea>
                             @error('description')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
+                        <div class="form-group mb-3">
+                            <label for="author">Muallif nomi</label>
+                            <input type="text" id="author" class="form-control" name="author">
+                            @error('author')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
                         <div class="form-floating mb-3">
-                            <label class="text text-primary" for="floatingInput"> Maqola faylini yuklang</label>
-                            <input type="file" name="file" class="form-control " id="floatingInput"  >
+                            <label class="text text-primary" for="file"> Rasm yuklang</label>
+                            <input type="file" id="image" class="form-control" name="image">
+                            @error('image')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+
+                        <div class="form-floating mb-3">
+                            <label class="text text-primary" for="file"> Kitob faylini yuklang</label>
+                            <input type="file" id="file" class="form-control " name="file" >
                             @error('file')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
