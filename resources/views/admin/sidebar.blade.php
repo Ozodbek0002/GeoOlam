@@ -12,15 +12,22 @@
 
                 <li class="nav-item {{  request()->routeIs('admin.articles') ? 'active' : '' }}">
                     <a href="{{ route('admin.articles') }}">
-                        <i class="fas fa-user"></i>
+                        <i class="bi bi-newspaper"></i>
                         <p>Maqolalar</p>
                     </a>
                 </li>
 
                 <li class="nav-item {{  request()->routeIs('admin.books') ? 'active' : '' }}">
                     <a href="{{ route('admin.books') }}">
-                        <i class="fas fa-user"></i>
+                        <i class="bi bi-book"></i>
                         <p>Kitoblar</p>
+                    </a>
+                </li>
+
+                <li class="nav-item {{  request()->routeIs('admin.slides') ? 'active' : '' }}">
+                    <a href="{{ route('admin.slides') }}">
+                        <i class="bi bi-file-earmark-ppt"></i>
+                        <p>Slaydlar</p>
                     </a>
                 </li>
 

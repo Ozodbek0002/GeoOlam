@@ -14,7 +14,10 @@ class SlideController extends Controller
      */
     public function index()
     {
-        //
+        $data = Slide::paginate(10);
+        return view('admin.slides.index',[
+            'slides'=>$data
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class SlideController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.slides.create');
     }
 
     /**
@@ -35,7 +38,38 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Slide();
+
+        $slide = $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'image'=>'required',
+            'file'=>'required',
+        ],[
+            'title.required'=>'Iltimos slayd nomini kiriting.',
+            'description.required'=>'Iltimos qisqacha izoh yozing.',
+            'image.required'=>'Iltimos rasm yuklang.',
+            'file.required'=>'Iltimos slayd faylini yuklang.'
+        ]);
+
+        $data->title = $slide['title'];
+        $data->description = $slide['description'];
+        $data->category = $request->category;
+
+        $image = $request->image;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->image->move('slides', $imagename);
+        $data->image = $imagename;
+
+        $file = $request->file;
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $request->file->move('slides', $filename);
+        $data->file = $filename;
+
+        $data->save();
+
+        return redirect()->route('admin.slides');
+
     }
 
     /**
@@ -57,7 +91,9 @@ class SlideController extends Controller
      */
     public function edit(Slide $slide)
     {
-        //
+        return view('admin.slides.edit',[
+            'slide'=>$slide
+        ]);
     }
 
     /**
@@ -69,7 +105,24 @@ class SlideController extends Controller
      */
     public function update(Request $request, Slide $slide)
     {
-        //
+        $slide->title = $request->title;
+        $slide->description = $request->description;
+
+        if ($request->image != null) {
+            $image = $request->image;
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('slides', $imagename);
+            $slide->image = $imagename;
+        };
+
+        if ($request->file != null) {
+            $file = $request->file;
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $request->file->move('slides', $filename);
+            $slide->file = $filename;
+        };
+        $slide->save();
+        return redirect()->route('admin.slides');
     }
 
     /**
@@ -80,6 +133,7 @@ class SlideController extends Controller
      */
     public function destroy(Slide $slide)
     {
-        //
+        $slide->delete();
+        return redirect()->route('admin.slides');
     }
 }
