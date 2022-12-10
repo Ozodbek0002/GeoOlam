@@ -54,10 +54,11 @@
                     <span class="sr-only visually-hidden visually-hidden">Previous</span>
                 </button>
 
-                <button class="embla__button embla__button--next " >
+                <button class="embla__button embla__button--next" >
                     <span class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont" aria-hidden="true"></span>
                     <span class="sr-only visually-hidden visually-hidden">Next</span>
                 </button>
+
 
             </div>
         </div>

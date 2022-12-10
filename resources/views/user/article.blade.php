@@ -36,6 +36,17 @@
 
                 @endforeach
 
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        @if ($articles->links())
+                            <div class="mt-4 p-4 box has-text-centered">
+                                {{ $articles->links() }}
+                            </div>
+                        @endif
+
+                    </div>
+                </div>
 
             </div>
         </div>

@@ -37,8 +37,9 @@
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7"
-                                                         href="{{url('/')}}">Geo🌏lam</a></span>
+                    <span class="navbar-caption-wrap">
+                        <a class="navbar-caption text-black text-primary display-7" href="{{url('/')}}">Geo🌏lam</a>
+                    </span>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
@@ -53,10 +54,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-                        <li class="nav-item dropdown"><a class="nav-link link text-black dropdown-toggle display-7" href="#"
-                                                         aria-expanded="false" data-toggle="dropdown-submenu"
-                                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Ilmiy
-                                Maqolalar</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-black dropdown-toggle display-7" href="#" aria-expanded="false" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside">Ilmiy Maqolalar</a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-892">
 
@@ -77,11 +76,9 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-795">
 
-                                <a class="text-black dropdown-item text-primary display-7" href="{{route('slide_uz')}}">O`zbekcha
-                                    slaydlar</a>
+                                <a class="text-black dropdown-item text-primary display-7" href="{{route('slide_uz')}}">O`zbekcha slaydlar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('slide_ru')}}">Ruscha slaydlar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('slide_en')}}">Inglizcha
-                                    slaydlar</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('slide_en')}}">Inglizcha slaydlar</a>
 
                             </div>
                         </li>
@@ -106,12 +103,9 @@
                                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Kurs ishlari</a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-951">
-                                <a class="text-black show dropdown-item text-primary display-7" href="{{route('cource')}}">O`zbekcha
-                                    kurs ishlar</a>
-                                <a class="text-black show dropdown-item display-7" href="{{route('cource')}}">Ruscha kurs
-                                    ishlar</a>
-                                <a class="text-black show dropdown-item display-7" href="{{route('cource')}}">Inglizcha kurs
-                                    ishlar</a>
+                                <a class="text-black show dropdown-item text-primary display-7" href="{{route('cource_uz')}}">O`zbekcha kurs ishlar</a>
+                                <a class="text-black show dropdown-item display-7" href="{{route('cource_ru')}}">Ruscha kurs ishlar</a>
+                                <a class="text-black show dropdown-item display-7" href="{{route('cource_en')}}">Inglizcha kurs ishlar</a>
 
                             </div>
                         </li>
@@ -209,22 +203,22 @@
     {{--        // Footer--}}
 
 
-    <script src="assets/web/assets/jquery/jquery.min.js"></script>
-    <script src="assets/popper/popper.min.js"></script>
-    <script src="assets/tether/tether.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/smoothscroll/smooth-scroll.js"></script>
-    <script src="assets/dropdown/js/nav-dropdown.js"></script>
-    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-    <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-    <script src="assets/parallax/jarallax.min.js"></script>
-    <script src="assets/theme/js/script.js"></script>
-
+    <script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/popper/popper.min.js')}}"></script>
+    <script src="{{asset('assets/tether/tether.min.js')}}"></script>
+    <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>
+    <script src="{{asset('assets/dropdown/js/nav-dropdown.js')}}"></script>
+    <script src="{{asset('assets/dropdown/js/navbar-dropdown.js')}}"></script>
+    <script src="{{asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>
+    <script src="{{asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>
+    <script src="{{asset('assets/parallax/jarallax.min.js')}}"></script>
+    <script src="{{asset('assets/theme/js/script.js')}}"></script>
 
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
                 class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
+
 
 
     </body>

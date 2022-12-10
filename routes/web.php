@@ -30,8 +30,8 @@ Route::get('/get_book_en', [RouteController::class, 'book_en'])->name('book_en')
 Route::get('/get_book_mo', [RouteController::class, 'book_mo'])->name('book_mo');
 Route::get('/get_book_us', [RouteController::class, 'book_us'])->name('book_us');
 Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz');
-Route::get('/cource', [RouteController::class, 'cource'])->name('cource');
-Route::get('/cource', [RouteController::class, 'cource'])->name('cource');
+Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
+Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
 
 
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
