@@ -39,7 +39,7 @@
                                     </div>
 
                                     <div class="mbr-section-btn item-footer mt-2">
-                                        <a href="" class="btn btn-primary item-btn display-7" target="_blank">Yuklab olish</a>
+                                        <a href="" class="btn btn-primary item-btn display-7" >Yuklab olish</a>
                                     </div>
                                 </div>
                             </div>
