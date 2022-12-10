@@ -17,6 +17,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{  request()->routeIs('admin.slides') ? 'active' : '' }}">
+                    <a href="{{ route('admin.slides') }}">
+                        <i class="bi bi-file-earmark-ppt"></i>
+                        <p>Slaydlar</p>
+                    </a>
+                </li>
+
                 <li class="nav-item {{  request()->routeIs('admin.books') ? 'active' : '' }}">
                     <a href="{{ route('admin.books') }}">
                         <i class="bi bi-book"></i>
@@ -24,12 +31,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{  request()->routeIs('admin.slides') ? 'active' : '' }}">
-                    <a href="{{ route('admin.slides') }}">
-                        <i class="bi bi-file-earmark-ppt"></i>
-                        <p>Slaydlar</p>
-                    </a>
-                </li>
 
 
 

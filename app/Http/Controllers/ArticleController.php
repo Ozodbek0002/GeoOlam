@@ -100,6 +100,7 @@ class ArticleController extends Controller
     {
         $article->title = $request->title;
         $article->description = $request->description;
+        $article->category = $request->category;
 
         if ($request->file != null) {
             $image = $request->file;

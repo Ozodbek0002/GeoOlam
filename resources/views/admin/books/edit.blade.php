@@ -16,11 +16,33 @@
                         @csrf
                         @method('PUT')
 
+                        <div class="form-group">
+
+                            <label for=""> Kategoriyasi </label>
+                            <select  name="category" id="like_to" class="form-control">
+                                <option value="{{$book->category}}" style="color: blue">
+                                    @if($book->category == 'lu')
+                                        Lug'at
+                                    @elseif($book->category == 'en')
+                                        Ensiklopediya
+                                    @elseif($book->category == 'mo')
+                                        Monografiya
+                                    @elseif($book->category == 'us')
+                                        Uslubiy qollanma
+                                    @endif
+                                </option>
+                                <option value="lu" >Lug`at</option>
+                                <option value="en" >Ensikopediya</option>
+                                <option value="mo" >Monografiya</option>
+                                <option value="us" >Uslubiy qollanma</option>
+                            </select>
+
+                        </div>
+
 
                         <div class="form-group">
                             <label for="title"> Kitob nomi </label>
-                            <input type="text" id="title" name="title" value="{{$book->title}}" class="form-control"
-                                   required>
+                            <input type="text" id="title" name="title" value="{{$book->title}}" class="form-control" required>
                         </div>
 
                         <div class="form-group">

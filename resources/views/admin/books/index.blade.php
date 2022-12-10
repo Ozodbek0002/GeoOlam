@@ -30,9 +30,9 @@
                         </thead>
                         <tbody>
 
-                        @foreach($books as $book)
+                        @foreach($books as $ind=>$book)
                             <tr>
-                                <td>{{$loop->index+1}}</td>
+                                <td class="col-1">{{($books->currentpage()-1)*($books->perpage())+$ind+1}}</td>
                                 <td>{{$book->title}}</td>
                                 <td>{{$book->description}}</td>
                                 <td>{{$book->author}}</td>
@@ -74,6 +74,11 @@
                     <div class="container">
                         <div class="row justify-content-center">
 
+                            @if ($books->links())
+                                <div class="mt-4 p-4 box has-text-centered">
+                                    {{ $books->links() }}
+                                </div>
+                            @endif
 
                         </div>
                     </div>

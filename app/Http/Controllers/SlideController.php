@@ -14,7 +14,7 @@ class SlideController extends Controller
      */
     public function index()
     {
-        $data = Slide::paginate(10);
+        $data = Slide::paginate(5);
         return view('admin.slides.index',[
             'slides'=>$data
         ]);
@@ -43,18 +43,20 @@ class SlideController extends Controller
         $slide = $request->validate([
             'title'=>'required',
             'description'=>'required',
+            'category'=>'required',
             'image'=>'required',
             'file'=>'required',
         ],[
             'title.required'=>'Iltimos slayd nomini kiriting.',
             'description.required'=>'Iltimos qisqacha izoh yozing.',
             'image.required'=>'Iltimos rasm yuklang.',
+            'category.required'=>'Iltimos kategoriyani tanlang.',
             'file.required'=>'Iltimos slayd faylini yuklang.'
         ]);
 
         $data->title = $slide['title'];
         $data->description = $slide['description'];
-        $data->category = $request->category;
+        $data->category = $slide['category'];
 
         $image = $request->image;
         $imagename = time() . '.' . $image->getClientOriginalExtension();
@@ -107,6 +109,8 @@ class SlideController extends Controller
     {
         $slide->title = $request->title;
         $slide->description = $request->description;
+        $slide->category = $request->category;
+
 
         if ($request->image != null) {
             $image = $request->image;

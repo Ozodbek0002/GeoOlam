@@ -12,7 +12,25 @@
                           enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <div class="form-group">
 
+                            <label for=""> Kategoriyasi </label>
+                            <select name="category" id="like_to" class="form-control">
+                                <option value="{{$slide->category}}" style="color: blue">
+                                    @if($slide->category == 'uz')
+                                        <td>Uzbek</td>
+                                    @elseif($slide->category == 'ru')
+                                        <td>Rus</td>
+                                    @elseif($slide->category == 'en')
+                                        <td>English</td>
+                                    @endif
+                                </option>
+                                <option value="uz">Uzbekcha</option>
+                                <option value="en" >Inglizcha</option>
+                                <option value="ru" >Ruscha</option>
+                            </select>
+
+                        </div>
 
                         <div class="form-group">
                             <label for="title"> Slayd nomi </label>
