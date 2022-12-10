@@ -23,6 +23,7 @@
                             <th class="" scope="col"> Nomi </th>
                             <th class="" scope="col"> Izoh </th>
                             <th class="" scope="col"> Muallifi </th>
+                            <th class="" scope="col"> Kategoriya </th>
                             <th class="" scope="col"> Rasm </th>
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
@@ -35,6 +36,16 @@
                                 <td>{{$book->title}}</td>
                                 <td>{{$book->description}}</td>
                                 <td>{{$book->author}}</td>
+                                @if($book->category == 'lu')
+                                    <td>Lug'at</td>
+                                @elseif($book->category == 'en')
+                                    <td>Ensiklopediya</td>
+                                @elseif($book->category == 'mo')
+                                    <td>Monografiya</td>
+                                @elseif($book->category == 'us')
+                                    <td>Uslubiy qollanma</td>
+                                @endif
+
                                 <td><img src="{{asset("books/$book->image")}}" alt="image" style="height: 100px; width: 100px"></td>
 
                                 <td class="col-2">

@@ -30,9 +30,10 @@
 
                             <label for=""> Kategoriyasi </label>
                             <select name="category" id="like_to" class="form-control">
-                                <option value="uz">Uzbekcha</option>
-                                <option value="en" >Inglizcha</option>
-                                <option value="ru" >Ruscha</option>
+                                <option value="lu" >Lug`at</option>
+                                <option value="en" >Ensikopediya</option>
+                                <option value="mo" >Monografiya</option>
+                                <option value="us" >Uslubiy qollanma</option>
                             </select>
 
                         </div>

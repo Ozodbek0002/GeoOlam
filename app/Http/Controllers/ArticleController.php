@@ -40,15 +40,15 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $data = new Article();
-
         $article = $request->validate([
-           'title'=>'required',
-           'description'=>'required',
-           'file'=>'required',
-        ],[
-            'title.required'=>'Iltimos maqola nomini kiriting.',
-            'description.required'=>'Iltimos qisqacha izoh yozing.',
-            'file.required'=>'Iltimos maqola faylini yuklang.'
+            'title' => 'required',
+            'description' => 'required',
+            'category'=> 'required',
+            'file' => 'required',
+        ], [
+            'title.required' => 'Iltimos maqola nomini kiriting.',
+            'description.required' => 'Iltimos qisqacha izoh yozing.',
+            'file.required' => 'Iltimos maqola faylini yuklang.'
         ]);
 
         $data->title = $article['title'];

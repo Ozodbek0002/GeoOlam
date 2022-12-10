@@ -9,8 +9,8 @@
                 <hr>
                 <div class="card-body">
 
-<<<<<<< HEAD
-=======
+{{--<<<<<<< HEAD--}}
+{{--=======--}}
 {{--                    @if ($errors->any())--}}
 {{--                        <div class="alert alert-danger">--}}
 {{--                            <strong> Xatolik!.. </strong>--}}
@@ -21,7 +21,7 @@
 {{--                            </ul>--}}
 {{--                        </div>--}}
 {{--                    @endif--}}
->>>>>>> origin/master
+{{-->>>>>>> origin/master--}}
 
 
                     <form action="{{route('admin.books.update',$book->id)}}" method="POST" accept-charset="UTF-8"

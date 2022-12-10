@@ -3,16 +3,15 @@
 <html>
 
     <head>
-        <!-- Site made with Mobirise Website Builder v5.0.29, https://mobirise.com -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="generator" content="Mobirise v5.0.29, mobirise.com">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-        <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="assets/images/newlogo.png" type="image/x-icon">
         <meta name="description" content="">
 
 
-        <title>Home</title>
+        <title>GeoOlam</title>
         <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
         <link rel="stylesheet" href="assets/tether/tether.min.css">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -61,11 +60,11 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-892">
 
-                                <a class="text-black dropdown-item text-primary display-7" href="{{route('article')}}">O'zbekcha
+                                <a class="text-black dropdown-item text-primary display-7" href="{{route('article_uz')}}">O'zbekcha
                                     maqolalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('article')}}">Ruscha
+                                <a class="text-black dropdown-item display-7" href="{{route('article_ru')}}">Ruscha
                                     maqolalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('article')}}">Inglischa
+                                <a class="text-black dropdown-item display-7" href="{{route('article_en')}}">Inglischa
                                     maqolalar</a>
 
                             </div>
@@ -78,10 +77,10 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-795">
 
-                                <a class="text-black dropdown-item text-primary display-7" href="{{route('slide')}}">O`zbekcha
+                                <a class="text-black dropdown-item text-primary display-7" href="{{route('slide_uz')}}">O`zbekcha
                                     slaydlar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('slide')}}">Ruscha slaydlar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('slide')}}">Inglizcha
+                                <a class="text-black dropdown-item display-7" href="{{route('slide_ru')}}">Ruscha slaydlar</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('slide_en')}}">Inglizcha
                                     slaydlar</a>
 
                             </div>
@@ -94,11 +93,10 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-111">
 
-                                <a class="text-black dropdown-item text-primary display-7" href="{{route('book')}}">Lug'atlar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('book')}}">Ensiklopediyalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('book')}}">Monografiyalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('book')}}">Uslubiy
-                                    qo'llanmalar</a>
+                                <a class="text-black dropdown-item text-primary display-7" href="{{route('book_lu')}}">Lug'atlar</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('book_en')}}">Ensiklopediyalar</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('book_mo')}}">Monografiyalar</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('book_us')}}">Uslubiy qo'llanmalar</a>
 
                             </div>
                         </li>

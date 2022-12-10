@@ -22,6 +22,7 @@
                             <th class="" scope="col">T/R</th>
                             <th class="" scope="col"> Nomi </th>
                             <th class="" scope="col"> Izoh </th>
+                            <th class="" scope="col"> Kategoriya </th>
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
@@ -32,7 +33,13 @@
                                 <td class="col-1">{{($articles->currentpage()-1)*($articles->perpage())+$ind+1}}</td>
                                 <td>{!! $poet->title  !!}</td>
                                 <td>{!! $poet->description !!}</td>
-
+                                @if($poet->category == 'uz')
+                                    <td>Uzbek</td>
+                                @elseif($poet->category == 'ru')
+                                    <td>Rus</td>
+                                @elseif($poet->category == 'en')
+                                    <td>English</td>
+                                @endif
                                 <td class="col-2">
                                     <form action="{{ route('admin.articles.destroy',$poet->id) }}" method="POST">
                                         <a class="btn btn-warning btn-sm"
