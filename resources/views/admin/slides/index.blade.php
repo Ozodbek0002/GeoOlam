@@ -22,17 +22,25 @@
                             <th class="" scope="col">T/R</th>
                             <th class="" scope="col"> Nomi </th>
                             <th class="" scope="col"> Izoh </th>
+                            <th class="" scope="col"> Kategoriya </th>
                             <th class="" scope="col"> Rasm </th>
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($slides as $slide)
+                        @foreach($slides as $ind=>$slide)
                             <tr>
-                                <td>{{$loop->index+1}}</td>
+                                <td class="col-1">{{($slides->currentpage()-1)*($slides->perpage())+$ind+1}}</td>
                                 <td>{{$slide->title}}</td>
                                 <td>{{$slide->description}}</td>
+                                @if($slide->category == 'uz')
+                                    <td>Uzbek</td>
+                                @elseif($slide->category == 'ru')
+                                    <td>Rus</td>
+                                @elseif($slide->category == 'en')
+                                    <td>English</td>
+                                @endif
                                 <td><img src="{{asset("slides/$slide->image")}}" alt="image" style="height: 100px; width: 100px"></td>
 
                                 <td class="col-2">
@@ -61,6 +69,11 @@
                     <div class="container">
                         <div class="row justify-content-center">
 
+                            @if ($slides->links())
+                                <div class="mt-4 p-4 box has-text-centered">
+                                    {{ $slides->links() }}
+                                </div>
+                            @endif
 
                         </div>
                     </div>

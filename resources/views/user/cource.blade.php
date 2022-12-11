@@ -1,6 +1,6 @@
 @extends('user.master')
 
-@section('title', 'Aloqa')
+{{--@section('title', 'Aloqa')--}}
 
 @section('content')
 
@@ -12,108 +12,41 @@
             <div class="row">
                 <div class="title col-12">
                     <h5 class="mbr-section-title mbr-fonts-style mb-3 display-2">
-                        <strong>Maqolalar</strong></h5>
-
-                </div>
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper">
-                        <div class="top-line">
-                            <h6 class="card-title mbr-fonts-style display-5"><strong>Xorazm lanshaftlarining
-                                    o'zgarishi</strong></h6>
-                            <p class="mbr-text cost mbr-fonts-style display-5"></p>
-                        </div>
-                        <div class="bottom-line">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                qwertyuiolkjhgfbncghnhmh<br>jtsmdt<br>um<br>yjntrsjmyutkmuyj,i,ykmud</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper">
-                        <div class="top-line">
-                            <h6 class="card-title mbr-fonts-style display-5">
-                                <strong>Special Issue</strong>
-                            </h6>
-                            <p class="mbr-text cost mbr-fonts-style display-5">XXX</p>
-                        </div>
-                        <div class="bottom-line">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                All sites you create with the Mobirise web builder are mobile-friendly natively. No
-                                special
-                                actions required. For your commercial and non-profit projects.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper">
-                        <div class="top-line">
-                            <h6 class="card-title mbr-fonts-style display-5">
-                                <strong>Special Issue</strong>
-                            </h6>
-                            <p class="mbr-text cost mbr-fonts-style display-5">XXX</p>
-                        </div>
-                        <div class="bottom-line">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                All sites you create with the Mobirise web builder are mobile-friendly natively. No
-                                special
-                                actions required. For your commercial and non-profit projects.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper">
-                        <div class="top-line">
-                            <h6 class="card-title mbr-fonts-style display-5">
-                                <strong>Special Issue</strong>
-                            </h6>
-                            <p class="mbr-text cost mbr-fonts-style display-5">XXX</p>
-                        </div>
-                        <div class="bottom-line">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                All sites you create with the Mobirise web builder are mobile-friendly natively. No
-                                special
-                                actions required. For your commercial and non-profit projects.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper">
-                        <div class="top-line">
-                            <h6 class="card-title mbr-fonts-style display-5">
-                                <strong>Special Issue</strong>
-                            </h6>
-                            <p class="mbr-text cost mbr-fonts-style display-5">$39</p>
-                        </div>
-                        <div class="bottom-line">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                All sites you create with the Mobirise web builder are mobile-friendly natively. No
-                                special
-                                actions required. For your commercial and non-profit projects.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper">
-                        <div class="top-line">
-                            <h6 class="card-title mbr-fonts-style display-5">
-                                <strong>Special Issue</strong>
-                            </h6>
-                            <p class="mbr-text cost mbr-fonts-style display-5">$49</p>
-                        </div>
-                        <div class="bottom-line">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                All sites you create with the Mobirise web builder are mobile-friendly natively. No
-                                special
-                                actions required. For your commercial and non-profit projects.
-                            </p>
-                        </div>
-                    </div>
+                        <strong>{{ $title }}</strong></h5>
                 </div>
 
+
+                @foreach ( $cources as $article)
+
+                    <div class="card col-12 col-md-6">
+                        <div class="card-wrapper">
+                            <div class="top-line">
+                                <h6 class="card-title mbr-fonts-style display-5"><strong>{{$article->title}}</strong></h6>
+                                <p class="mbr-text cost mbr-fonts-style display-5"></p>
+                            </div>
+                            <div class="bottom-line">
+                                <p class="mbr-text mbr-fonts-style display-7"> {{$article->description}} </p>
+                            </div>
+                            <div class="mbr-section-btn item-footer mt-2">
+                                <a href="" class="btn btn-primary item-btn display-7" target="_blank">Yuklab olish </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                @endforeach
+
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        @if ($cources->links())
+                            <div class="mt-4 p-4 box has-text-centered">
+                                {{ $cources->links() }}
+                            </div>
+                        @endif
+
+                    </div>
+                </div>
 
             </div>
         </div>

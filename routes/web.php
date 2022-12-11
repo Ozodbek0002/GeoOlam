@@ -19,12 +19,21 @@ Route::get('/', function () {
 });
 
 // user
-Route::get('/article_uz', [RouteController::class, 'article_uz'])->name('article');
-Route::get('/article_us', [RouteController::class, 'article_us'])->name('article');
-Route::get('/article_ru', [RouteController::class, 'article_ru'])->name('article');
-Route::get('/slide', [RouteController::class, 'slide'])->name('slide');
-Route::get('/book', [RouteController::class, 'book'])->name('book');
-Route::get('/cource', [RouteController::class, 'cource'])->name('cource');
+Route::get('/article_uz', [RouteController::class, 'article_uz'])->name('article_uz');
+Route::get('/article_en', [RouteController::class, 'article_en'])->name('article_en');
+Route::get('/article_ru', [RouteController::class, 'article_ru'])->name('article_ru');
+Route::get('/slide_uz', [RouteController::class, 'slide_uz'])->name('slide_uz');
+Route::get('/slide_ru', [RouteController::class, 'slide_ru'])->name('slide_ru');
+Route::get('/slide_en', [RouteController::class, 'slide_en'])->name('slide_en');
+Route::get('/get_book_lu', [RouteController::class, 'book_lu'])->name('book_lu');
+Route::get('/get_book_en', [RouteController::class, 'book_en'])->name('book_en');
+Route::get('/get_book_mo', [RouteController::class, 'book_mo'])->name('book_mo');
+Route::get('/get_book_us', [RouteController::class, 'book_us'])->name('book_us');
+Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz');
+Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
+Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
+
+
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
 
 

@@ -23,18 +23,29 @@
                             <th class="" scope="col"> Nomi </th>
                             <th class="" scope="col"> Izoh </th>
                             <th class="" scope="col"> Muallifi </th>
+                            <th class="" scope="col"> Kategoriya </th>
                             <th class="" scope="col"> Rasm </th>
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($books as $book)
+                        @foreach($books as $ind=>$book)
                             <tr>
-                                <td>{{$loop->index+1}}</td>
+                                <td class="col-1">{{($books->currentpage()-1)*($books->perpage())+$ind+1}}</td>
                                 <td>{{$book->title}}</td>
                                 <td>{{$book->description}}</td>
                                 <td>{{$book->author}}</td>
+                                @if($book->category == 'lu')
+                                    <td>Lug'at</td>
+                                @elseif($book->category == 'en')
+                                    <td>Ensiklopediya</td>
+                                @elseif($book->category == 'mo')
+                                    <td>Monografiya</td>
+                                @elseif($book->category == 'us')
+                                    <td>Uslubiy qollanma</td>
+                                @endif
+
                                 <td><img src="{{asset("books/$book->image")}}" alt="image" style="height: 100px; width: 100px"></td>
 
                                 <td class="col-2">
@@ -63,6 +74,11 @@
                     <div class="container">
                         <div class="row justify-content-center">
 
+                            @if ($books->links())
+                                <div class="mt-4 p-4 box has-text-centered">
+                                    {{ $books->links() }}
+                                </div>
+                            @endif
 
                         </div>
                     </div>
