@@ -26,6 +26,27 @@
                         @csrf
                         @method('PUT')
 
+                        <div class="form-group">
+
+                            <label for=""> Kategoriyasi </label>
+                            <select name="category" id="like_to" class="form-control">
+                                <option value="{{$article->category}}" style="color: blue">
+                                    @if($article->category == 'uz')
+                                        <td>Uzbekcha</td>
+                                    @elseif($article->category == 'ru')
+                                        <td>Ruscha</td>
+                                    @elseif($article->category == 'en')
+                                        <td>Englishcha</td>
+                                    @endif
+                                </option>
+
+                                <option value="uz">Uzbekcha</option>
+                                <option value="en" >Inglizcha</option>
+                                <option value="ru" >Ruscha</option>
+                            </select>
+
+                        </div>
+
 
                         <div class="form-group">
                             <label for=""> Maqola nomi </label>

@@ -6,7 +6,7 @@
                 <li class="nav-item {{  request()->routeIs('admin.users') ? 'active' : '' }}">
                     <a href="{{ route('admin.users') }}">
                         <i class="fas fa-user"></i>
-                        <p>Foydalanuvchilar</p>
+                        <p>Admin</p>
                     </a>
                 </li>
 
@@ -32,10 +32,17 @@
                 </li>
 
 
-                <li class="nav-item {{  request()->routeIs('admin.cources') ? 'active' : '' }}">
-                    <a href="{{ route('admin.cources') }}">
+                <li class="nav-item {{  request()->routeIs('admin.course') ? 'active' : '' }}">
+                    <a href="{{ route('admin.course') }}">
+                        <i class="bi bi-file-earmark-break"></i>
+                        <p>Kurs ishlar</p>
+                    </a>
+                </li>
 
-                        <p>Kurslar</p>
+                <li class="nav-item {{  request()->routeIs('contacts') ? 'active' : '' }}">
+                    <a href="{{ route('contacts') }}">
+                        <i class="bi bi-chat-dots"></i>
+                        <p>Xabarlar</p>
                     </a>
                 </li>
 

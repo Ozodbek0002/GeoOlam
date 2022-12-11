@@ -53,6 +53,7 @@ class BookController extends Controller
             'image.required'=>'Iltimos rasm yuklang.',
             'file.required'=>'Iltimos kitob faylini yuklang.',
         ]);
+
         $data->title = $book['title'];
         $data->description = $book['description'];
         $data->author = $book['author'];

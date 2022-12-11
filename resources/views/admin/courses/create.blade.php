@@ -22,7 +22,7 @@
                     @endif
 
 
-                    <form action="{{route('admin.cources.store')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                    <form action="{{route('admin.course.store')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                         @csrf
 
 

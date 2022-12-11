@@ -36,6 +36,7 @@
                                 <td>{{$book->title}}</td>
                                 <td>{{$book->description}}</td>
                                 <td>{{$book->author}}</td>
+
                                 @if($book->category == 'lu')
                                     <td>Lug'at</td>
                                 @elseif($book->category == 'en')

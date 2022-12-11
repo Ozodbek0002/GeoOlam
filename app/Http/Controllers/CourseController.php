@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = Course::paginate(10);
@@ -20,22 +16,14 @@ class CourseController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function create()
     {
         return view('admin.courses.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $data = new Course();
@@ -61,56 +49,41 @@ class CourseController extends Controller
 
         $data->save();
 
-        return redirect()->route('admin.cources');
+        return redirect()->route('admin.course');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Course $course)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Course $course)
+
+    public function edit(Request $request, Course $course)
     {
-        dd($course);
         return view('admin.courses.edit',[
-            'course'=>$course
+            'course'=>$course,
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Course $course)
     {
+        $course->title_uz= $request->title;
+        $course->description = $request->description;
+        $course->category = $request->category;
 
+        if ($request->file != null) {
+            $image = $request->file;
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->file->move('courses', $imagename);
+            $course->file = $imagename;
+        }
+
+        $course->save();
+
+        return redirect()->route('admin.course');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Course $course)
     {
-        dd($course);
         $course->delete();
-        return redirect()->route('admin.cources');
+        return redirect()->route('admin.course');
     }
 }

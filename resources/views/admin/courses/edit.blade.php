@@ -10,16 +10,24 @@
                 <div class="card-body">
 
 
-
-{{--                    <form action="{{route('admin.cources.update',$course->id)}}" method="POST" accept-charset="UTF-8"  enctype="multipart/form-data">--}}
+                    <form action="{{route('admin.course.update',$course->id) }}" method="POST" accept-charset="UTF-8"  enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-
 
                         <div class="form-group">
 
                             <label for=""> Kategoriyasi </label>
                             <select name="category" id="like_to" class="form-control">
+                                <option value="{{$course->category}}" style="color: blue">
+                                    @if($course->category == 'uz')
+                                        <td>Uzbekcha</td>
+                                    @elseif($course->category == 'ru')
+                                        <td>Ruscha</td>
+                                    @elseif($course->category == 'en')
+                                        <td>Englishcha</td>
+                                    @endif
+                                </option>
+
                                 <option value="uz">Uzbekcha</option>
                                 <option value="en" >Inglizcha</option>
                                 <option value="ru" >Ruscha</option>
@@ -27,9 +35,10 @@
 
                         </div>
 
+
                         <div class="form-group">
                             <label for="title"> Kurs nomi </label>
-                            <input type="text" id="title" name="title" value="{{$course->title}}" class="form-control"
+                            <input type="text" id="title" name="title" value="{{$course->title_uz}}" class="form-control"
                                    required>
                         </div>
 

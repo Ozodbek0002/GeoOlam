@@ -25,6 +25,7 @@
                                         <td>English</td>
                                     @endif
                                 </option>
+
                                 <option value="uz">Uzbekcha</option>
                                 <option value="en" >Inglizcha</option>
                                 <option value="ru" >Ruscha</option>

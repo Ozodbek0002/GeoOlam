@@ -12,7 +12,6 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
 
 
-
 // start
 Route::get('/', function () {
     return view('user.main');
@@ -33,25 +32,25 @@ Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz
 Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
 Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
 
-
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
+Route::resource('contacts', ContactController::class)->name('index', 'contacts');
 
 
 //admin routes
 Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(function () {
 
-    Route::get('/', function () {   return view('admin.master');   })->name('index');
+    Route::get('/', function () {
+        return view('admin.master');
+    })->name('index');
     Route::get('/users', [AdminController::class, 'index'])->name('users');
 
     Route::resource('articles', ArticleController::class)->name('index', 'articles');
     Route::resource('slides', SlideController::class)->name('index', 'slides');
     Route::resource('books', BookController::class)->name('index', 'books');
-    Route::resource('cources', CourseController::class)->name('index', 'cources');
-    Route::resource('contacts', ContactController::class)->name('index', 'contacts');
+    Route::resource('course', CourseController::class)->name('index', 'course');
 
 
 });
-
 
 
 Route::middleware('auth')->group(function () {
