@@ -73,7 +73,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link link text-black dropdown-toggle display-7" href="#"
                                data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                               aria-expanded="false">Slaydlar<br><br></a>
+                               aria-expanded="false">Slaydlar<br></a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-795">
 
@@ -134,10 +134,10 @@
         <section data-bs-version="5.1" class="footer1 cid-tnKcrkWiTH" once="footers" id="footer1-2">
             <div class="container">
 
-                <div class="row mbr-white">
+                <div class="row mbr-white" align="center">
 
-                    <div class="col-12 col-md- col-lg-4">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">Ma'lumot&nbsp;</h5>
+                    <div class="col-12 col-md- col-lg-4 pl-3 pr-5 ">
+                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7 text-center">Ma'lumot&nbsp;</h5>
                         <ul class="list mbr-fonts-style display-4">
 
                             <li class="mbr-text item-wrap">Ushbu saytda siz turli xildagi ilmiy maqolalar va dolzarb
@@ -160,8 +160,8 @@
                         </ul>
                     </div>
 
-                    <div class="col-12 col-md- col-lg-4">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">Takliflar<br></h5>
+                    <div class="col-12 col-md- col-lg-4 pr-2">
+                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7 text-center" >Takliflar<br></h5>
                         <ul class="list mbr-fonts-style display-4">
                             <li class="mbr-text item-wrap">Ilmiy maqolalar chop etish</li>
                             <li class="mbr-text item-wrap">Uslubiy qo'llanmalar chiqarish</li>
@@ -170,12 +170,12 @@
                         </ul>
                     </div>
 
-                    <div class="col-12 col-md- col-lg-4">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">Aloqa</h5>
+                    <div class="col-12 col-md- col-lg-4 pl-2">
+                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7 text-center" >Aloqa</h5>
                         <p class="mbr-text mbr-fonts-style mb-4 display-4">Email: sabirovj75@gmail.com
                             <br>Tel: +998 88 526 19 12</p>
                         <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-7"><br></h5>
-                        <div class="social-row display-7">
+                        <div class="social-row display-7 d-flex justify-content-center">
                             <div class="soc-item">
                                 <a href="https://t.me/Muallif2" target="_blank">
                                     <span class="mbr-iconfont socicon-telegram socicon"></span>
