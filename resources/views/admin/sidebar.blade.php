@@ -31,6 +31,12 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{  request()->routeIs('admin.cources') ? 'active' : '' }}">
+                    <a href="{{ route('admin.cources') }}">
+
+                        <p>Kurslar</p>
+                    </a>
+                </li>
 
 
             </ul>

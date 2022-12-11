@@ -15,6 +15,18 @@
 
 
                         <div class="form-group">
+
+                            <label for=""> Kategoriyasi </label>
+                            <select name="category" id="like_to" class="form-control">
+                                <option value="uz">Uzbekcha</option>
+                                <option value="en" >Inglizcha</option>
+                                <option value="ru" >Ruscha</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
                             <label for="title"> Slayd nomi </label>
                             <input type="text" id="title" name="title" value="{{$slide->title}}" class="form-control"
                                    required>
@@ -34,8 +46,8 @@
 
 
                         <div class="form-floating mb-3">
-                            <label class="text text-primary" for="bookFile"> Slayd faylini yuklang</label>
-                            <input type="file" name="file" class="form-control " id="bookFile">
+                            <label class="text text-primary" for="slideFile"> Slayd faylini yuklang</label>
+                            <input type="file" name="file" class="form-control " id="slideFile">
                         </div>
 
 

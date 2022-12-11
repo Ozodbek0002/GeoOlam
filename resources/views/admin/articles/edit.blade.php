@@ -28,6 +28,18 @@
 
 
                         <div class="form-group">
+
+                            <label for=""> Kategoriyasi </label>
+                            <select name="category" id="like_to" class="form-control">
+                                <option value="uz">Uzbekcha</option>
+                                <option value="en" >Inglizcha</option>
+                                <option value="ru" >Ruscha</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
                             <label for=""> Maqola nomi </label>
                             <input type="text" name="title" value="{{$article->title}}" class="form-control"
                                    required>

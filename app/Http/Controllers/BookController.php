@@ -109,6 +109,7 @@ class BookController extends Controller
         $book->title = $request->title;
         $book->description = $request->description;
         $book->author = $request->author;
+        $book->category = $request->category;
 
         if ($request->image != null) {
             $image = $request->image;

@@ -18,6 +18,18 @@
 
 
                         <div class="form-group">
+
+                            <label for=""> Kategoriyasi </label>
+                            <select name="category" id="like_to" class="form-control">
+                                <option value="uz">Uzbekcha</option>
+                                <option value="en" >Inglizcha</option>
+                                <option value="ru" >Ruscha</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
                             <label for="title"> Kitob nomi </label>
                             <input type="text" id="title" name="title" value="{{$book->title}}" class="form-control"
                                    required>
@@ -47,7 +59,7 @@
                         </div>
 
 
-                        <button type="submit" id="alert" class="btn btn-primary " onclick="end()">Saqlash</button>
+                        <button type="submit" id="alert" class="btn btn-primary ">Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
 
 
