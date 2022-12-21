@@ -15,6 +15,7 @@
                             <th class="" scope="col"> Nomi</th>
                             <th class="" scope="col"> Email </th>
                             <th class="" scope="col"> Matn </th>
+                            <th class="" scope="col"> Vaqti </th>
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
@@ -26,14 +27,15 @@
                                 <td>{{$con->name}}</td>
                                 <td>{{$con->email}}</td>
                                 <td>{{$con->text}}</td>
+                                <td>{{$con->created_at}}</td>
 
                                 <td class="col-2">
                                     <form action="{{ route('contacts.destroy',$con->id) }}" method="POST">
-{{--                                        <a class="btn btn-warning btn-sm" onclick="Oqidm()" >--}}
-{{--                                            <span class="btn-label">--}}
-{{--                                                <i class="fa fa-eye"></i>--}}
-{{--                                            </span>--}}
-{{--                                        </a>--}}
+                                        <a class="btn btn-warning btn-sm" onclick="Oqidm()" >
+                                            <span class="btn-label">
+                                                <i class="fa fa-eye"></i>
+                                            </span>
+                                        </a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">
@@ -56,7 +58,7 @@
                             @if ($contacts->links())
                                 <div class="mt-4 p-4 box has-text-centered">
                                     {{ $contacts->links() }}
-                                </div>$contacts
+                                </div>
                             @endif
 
                         </div>
