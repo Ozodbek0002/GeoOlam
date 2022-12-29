@@ -46,6 +46,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{  request()->routeIs('information') ? 'active' : '' }}">
+                    <a href="{{ route('admin.information') }}">
+                        <i class="bi bi-envelope-plus"></i>
+                        <p>Qiziqarli ma'lumotlar</p>
+                    </a>
+                </li>
+
 
             </ul>
         </div>
