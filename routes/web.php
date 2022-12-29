@@ -10,6 +10,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DownloadController;
 
 
 // start
@@ -32,8 +33,19 @@ Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz
 Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
 Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
 
+Route::get('/informations', [RouteController::class, 'informations'])->name('informations');
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
 Route::resource('contacts', ContactController::class)->name('index', 'contacts');
+
+Route::get('downloadArticle/{file_name}', [DownloadController::class, 'downloadArticle'])->name('downloadArticle');
+Route::get('downloadSlide/{file_name}', [DownloadController::class, 'downloadSlide'])->name('downloadSlide');
+Route::get('downloadCource/{file_name}', [DownloadController::class, 'downloadCourse'])->name('downloadCource');
+Route::get('downloadBook/{file_name}', [DownloadController::class, 'downloadBook'])->name('downloadBook');
+
+
+
+
+
 
 
 //admin routes

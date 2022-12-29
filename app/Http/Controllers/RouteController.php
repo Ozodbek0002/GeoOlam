@@ -149,6 +149,14 @@ class RouteController extends Controller
     }
 
 
+    public function informations()
+    {
+        return view('user.informations',[
+            'title' => 'Qiziqarli Ma`lumotlar'
+        ]);
+    }
+
+
     public function contact()
     {
         return view('user.contact');

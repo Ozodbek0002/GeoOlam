@@ -21,15 +21,24 @@
                     <div class="card col-12 col-md-6">
                         <div class="card-wrapper">
                             <div class="top-line">
-                                <h6 class="card-title mbr-fonts-style display-5"><strong>{{$article->title}}</strong></h6>
+                                <h6 class="card-title mbr-fonts-style display-5"><strong>{{$article->title}}</strong>
+                                </h6>
                                 <p class="mbr-text cost mbr-fonts-style display-5"></p>
                             </div>
+
+
                             <div class="bottom-line">
                                 <p class="mbr-text mbr-fonts-style display-7"> {{$article->description}} </p>
                             </div>
+
+
                             <div class="mbr-section-btn item-footer mt-2">
-                                <a href="" class="btn btn-primary item-btn display-7" target="_blank">Yuklab olish </a>
+                                <a href="{{ route( 'downloadArticle', $article->file )}}"
+                                   class="btn btn-primary item-btn display-7">Yuklab olish </a>
                             </div>
+                            <p class="cost mbr-fonts-style display-10"><i
+                                    class="fa fa-download"></i> {{ $article->eye }}
+                            </p>
 
                         </div>
                     </div>

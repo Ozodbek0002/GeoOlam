@@ -36,7 +36,8 @@
                                                     <strong>{{ $slide->title }}</strong>
                                                 </h4>
                                                 <p class="cost mbr-fonts-style display-10"><i
-                                                        class="fa fa-download"></i> {{ $slide->eye }}</p>
+                                                        class="fa fa-download"></i> {{ $slide->eye }}
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -48,8 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="mbr-section-btn item-footer mt-2">
-                                        <a href="" class="btn btn-primary item-btn display-7" target="_blank">Yuklab
-                                            olish</a>
+                                        <a href="{{ route( 'downloadSlide', $slide->file )}}"  class="btn btn-primary item-btn display-7" >Yuklab olish </a>
                                     </div>
                                 </div>
                             </div>

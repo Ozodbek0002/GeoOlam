@@ -38,9 +38,20 @@
                                         <p class="mbr-text mbr-fonts-style mt-3 display-7"> {{ $book->description }}</p>
                                     </div>
 
+
                                     <div class="mbr-section-btn item-footer mt-2">
-                                        <a href="" class="btn btn-primary item-btn display-7" >Yuklab olish</a>
+                                        <a href="{{ route( 'downloadBook', $book->file )}}" class="btn btn-primary item-btn display-7" >Yuklab olish</a>
+
                                     </div>
+
+                                    <div class="item-mbr-section-btn">
+                                      <p>
+                                          <i class="fa fa-download"></i> {{ $book->eye }}
+                                      </p>
+                                    </div>
+
+
+
                                 </div>
                             </div>
 
