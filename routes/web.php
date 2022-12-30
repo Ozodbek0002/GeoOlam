@@ -60,6 +60,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('slides', SlideController::class)->name('index', 'slides');
     Route::resource('books', BookController::class)->name('index', 'books');
     Route::resource('course', CourseController::class)->name('index', 'course');
+    Route::resource('information',\App\Http\Controllers\InformationController::class)->name('index','information');
 
 
 });
