@@ -49,9 +49,6 @@
                                           <i class="fa fa-download"></i> {{ $book->eye }}
                                       </p>
                                     </div>
-
-
-
                                 </div>
                             </div>
 
