@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $data = Book::paginate(10);
+        $data = Book::all();
         return view('admin.books.index',[
             'books'=>$data
         ]);
@@ -107,8 +107,7 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-//        dd($book);
-        dd($request->all());
+
         $book->title = $request->title;
         $book->description = $request->description;
         $book->author = $request->author;
