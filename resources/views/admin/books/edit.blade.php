@@ -20,7 +20,7 @@
 
                             <label for=""> Kategoriyasi </label>
                             <select  name="category" id="like_to" class="form-control">
-                                <option value="{{$book->category}}" style="color: blue">
+                                    <option value="{{$book->category}}" style="color: blue">
                                     @if($book->category == 'lu')
                                         Lug'at
                                     @elseif($book->category == 'en')
@@ -31,7 +31,7 @@
                                         Uslubiy qollanma
                                     @endif
                                 </option>
-                                <option value="lu" >Lug`at</option>
+                                <option value="lu" >Lug'at</option>
                                 <option value="en" >Ensikopediya</option>
                                 <option value="mo" >Monografiya</option>
                                 <option value="us" >Uslubiy qollanma</option>

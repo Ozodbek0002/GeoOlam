@@ -11,6 +11,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\InformationController;
+
 
 
 // start
@@ -18,7 +20,7 @@ Route::get('/', function () {
     return view('user.main');
 });
 
-// user
+// user view
 Route::get('/article_uz', [RouteController::class, 'article_uz'])->name('article_uz');
 Route::get('/article_en', [RouteController::class, 'article_en'])->name('article_en');
 Route::get('/article_ru', [RouteController::class, 'article_ru'])->name('article_ru');
@@ -32,7 +34,6 @@ Route::get('/get_book_us', [RouteController::class, 'book_us'])->name('book_us')
 Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz');
 Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
 Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
-
 Route::get('/informations', [RouteController::class, 'informations'])->name('informations');
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
 Route::resource('contacts', ContactController::class)->name('index', 'contacts');
@@ -41,10 +42,6 @@ Route::get('downloadArticle/{file_name}', [DownloadController::class, 'downloadA
 Route::get('downloadSlide/{file_name}', [DownloadController::class, 'downloadSlide'])->name('downloadSlide');
 Route::get('downloadCource/{file_name}', [DownloadController::class, 'downloadCourse'])->name('downloadCource');
 Route::get('downloadBook/{file_name}', [DownloadController::class, 'downloadBook'])->name('downloadBook');
-
-
-
-
 
 
 
@@ -60,8 +57,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('slides', SlideController::class)->name('index', 'slides');
     Route::resource('books', BookController::class)->name('index', 'books');
     Route::resource('course', CourseController::class)->name('index', 'course');
-    Route::resource('information',\App\Http\Controllers\InformationController::class)->name('index','information');
-
+    Route::resource('information',InformationController::class)->name('index','information');
 
 });
 
