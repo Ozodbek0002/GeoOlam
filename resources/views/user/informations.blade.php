@@ -15,25 +15,29 @@
                 </div>
 
 
-{{--                @foreach ( $cources as $article)--}}
+                @foreach ( $data as $d)
 
-{{--                    <div class="card col-12 col-md-6">--}}
-{{--                        <div class="card-wrapper">--}}
-{{--                            <div class="top-line">--}}
-{{--                                <h6 class="card-title mbr-fonts-style display-5"><strong>{{$article->title}}</strong></h6>--}}
-{{--                                <p class="mbr-text cost mbr-fonts-style display-5"></p>--}}
-{{--                            </div>--}}
-{{--                            <div class="bottom-line">--}}
-{{--                                <p class="mbr-text mbr-fonts-style display-7"> {{$article->description}} </p>--}}
-{{--                            </div>--}}
-{{--                            <div class="mbr-section-btn item-footer mt-2">--}}
-{{--                                <a href="" class="btn btn-primary item-btn display-7" target="_blank">Yuklab olish </a>--}}
-{{--                            </div>--}}
+                    <div class="card col-12 col-md-6">
+                        <div class="card-wrapper">
+                            <div class="col-12 col-md-3">
+                                <div class="item-img">
+                                    <img style="width: 250px; height: 200px;"
+                                         src="{{ asset('information/'.$d->image) }}" alt="{{ $d->title }}">
+                                </div>
+                            </div>
+                            <div class="top-line">
+                                <h6 class="card-title mbr-fonts-style display-5"><strong>{{$d->title}}</strong></h6>
+                                <p class="mbr-text cost mbr-fonts-style display-5"></p>
+                            </div>
+                            <div class="bottom-line">
+                                <p class="mbr-text mbr-fonts-style display-7"> {{$d->description}} </p>
+                            </div>
 
-{{--                        </div>--}}
-{{--                    </div>--}}
 
-{{--                @endforeach--}}
+                        </div>
+                    </div>
+
+                @endforeach
 
                 <div class="container">
                     <div class="row justify-content-center">

@@ -93,7 +93,6 @@
 
             </div>
 
-                @dd($books)
             @foreach($books as $book)
                 <div class="card">
                     <div class="card-wrapper">
