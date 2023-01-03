@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RouteController;
-
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\ContactController;
@@ -19,6 +18,7 @@ use App\Http\Controllers\InformationController;
 Route::get('/', function () {
     return view('user.main');
 });
+
 
 // user view
 Route::get('/article_uz', [RouteController::class, 'article_uz'])->name('article_uz');
@@ -35,6 +35,7 @@ Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz
 Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
 Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
 Route::get('/informations', [RouteController::class, 'informations'])->name('informations');
+
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
 Route::resource('contacts', ContactController::class)->name('index', 'contacts');
 
@@ -51,8 +52,8 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::get('/', function () {
         return view('admin.master');
     })->name('index');
-    Route::get('/users', [AdminController::class, 'index'])->name('users');
 
+    Route::get('/users', [AdminController::class, 'index'])->name('users');
     Route::resource('articles', ArticleController::class)->name('index', 'articles');
     Route::resource('slides', SlideController::class)->name('index', 'slides');
     Route::resource('books', BookController::class)->name('index', 'books');
