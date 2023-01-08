@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Information;
 use Illuminate\Http\Request;
 use App\Models\Slide;
 use App\Models\Article;
@@ -29,7 +30,6 @@ class DownloadController extends Controller
 
         $file_path = public_path('slides/' . $file_name);
         return response()->download($file_path);
-
     }
 
     public function downloadCourse($file_name)
@@ -50,6 +50,16 @@ class DownloadController extends Controller
 
 
         $file_path = public_path('books/' . $file_name);
+        return response()->download($file_path);
+    }
+
+    public function downloadinfore($file_name)
+    {
+//        $book = Information::where('file', $file_name)->first();
+//        $book->eye = $book->eye + 1;
+//        $book->save();
+//
+        $file_path = public_path('information/' . $file_name);
         return response()->download($file_path);
     }
 

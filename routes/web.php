@@ -43,6 +43,7 @@ Route::get('downloadArticle/{file_name}', [DownloadController::class, 'downloadA
 Route::get('downloadSlide/{file_name}', [DownloadController::class, 'downloadSlide'])->name('downloadSlide');
 Route::get('downloadCource/{file_name}', [DownloadController::class, 'downloadCourse'])->name('downloadCource');
 Route::get('downloadBook/{file_name}', [DownloadController::class, 'downloadBook'])->name('downloadBook');
+Route::get('downloadinfore/{file_name}', [DownloadController::class, 'downloadinfore'])->name('downloadinfore');
 
 
 

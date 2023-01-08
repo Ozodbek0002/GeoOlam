@@ -128,7 +128,8 @@
                                     </div>
                                     <div class="mbr-section-btn item-footer mt-2">
                                         <a href="{{ route( 'downloadBook', $book->file )}}"
-                                           class="btn btn-primary item-btn display-7">Yuklab olish</a>                                    </div>
+                                           class="btn btn-primary item-btn display-7">Yuklab olish</a>
+                                    </div>
                                 </div>
                             </div>
 
