@@ -155,8 +155,9 @@
 
                             <li class="mbr-text item-wrap">
                                 <strong>
-                                    <a href="https://t.me/Muallif2" class="text-secondary" target="_blank">Reklama xizmati
-                                        mavjud</a>
+                                    <a href="https://t.me/Muallif2" class="text-secondary" target="_blank">
+                                        Reklama xizmati mavjud
+                                    </a>
                                 </strong>
                             </li>
 

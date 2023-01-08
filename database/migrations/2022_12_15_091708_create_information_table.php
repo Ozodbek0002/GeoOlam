@@ -19,6 +19,7 @@ return new class extends Migration
              $table->string('description');
             $table->string('image');
             $table->string('file');
+            $table->integer('eye')->default(0);
             $table->timestamps();
         });
     }

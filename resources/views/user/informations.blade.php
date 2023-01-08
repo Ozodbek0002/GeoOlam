@@ -38,7 +38,7 @@
 
 
                             <div class="mbr-section-btn item-footer mt-2">
-                                <a href="{{ route('downloadinfore', $d->file )}}"
+                                <a href="{{ route('downloadInfore',$d->file )}}"
                                    class="btn btn-primary item-btn display-7">Yuklab olish
                                 </a>
                             </div>
