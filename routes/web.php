@@ -9,8 +9,8 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\DownloadController;
 
 
 
@@ -39,11 +39,11 @@ Route::get('/informations', [RouteController::class, 'informations'])->name('inf
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
 Route::resource('contacts', ContactController::class)->name('index', 'contacts');
 
-Route::get('downloadInfore/{file_name}', [DownloadController::class, 'downloadinfore'])->name('downloadInfore');
 Route::get('downloadArticle/{file_name}', [DownloadController::class, 'downloadArticle'])->name('downloadArticle');
 Route::get('downloadSlide/{file_name}', [DownloadController::class, 'downloadSlide'])->name('downloadSlide');
 Route::get('downloadCource/{file_name}', [DownloadController::class, 'downloadCourse'])->name('downloadCource');
 Route::get('downloadBook/{file_name}', [DownloadController::class, 'downloadBook'])->name('downloadBook');
+Route::get('downloadinfore/{file_name}',[DownloadController::class, 'downloadinfore'])->name('downloadinfore');
 
 
 

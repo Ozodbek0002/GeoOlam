@@ -12,6 +12,18 @@ use App\Models\Book;
 class DownloadController extends Controller
 {
 
+    public function downloadinfore($file_name)
+    {
+
+        $book = Information::where('file', $file_name)->first();
+        $book->eye = $book->eye + 1;
+        $book->save();
+
+        $file_path = public_path('information/' . $file_name);
+        return response()->download($file_path);
+
+    }
+
     public function downloadArticle($file_name)
     {
         $article = Article::where('file', $file_name)->firstOrFail();
@@ -53,17 +65,7 @@ class DownloadController extends Controller
         return response()->download($file_path);
     }
 
-    public function downloadinfore($file_name)
-    {
 
-        $book = Information::where('file', $file_name)->first();
-        $book->eye = $book->eye + 1;
-        $book->save();
-
-        $file_path = public_path('information/' . $file_name);
-        return response()->download($file_path);
-
-    }
 
 
 }

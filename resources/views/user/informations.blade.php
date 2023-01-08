@@ -28,9 +28,9 @@
                             <div class="top-line">
                                 <h6 class="card-title mbr-fonts-style display-5"><strong>{{$d->title}}</strong></h6>
                                 <p class="mbr-text cost mbr-fonts-style display-5"></p>
-{{--                                <p class="cost mbr-fonts-style display-10"><i--}}
-{{--                                        class="fa fa-download"></i> {{ $d->eye }}--}}
-{{--                                </p>--}}
+                                <p class="cost mbr-fonts-style display-10"><i
+                                        class="fa fa-download"></i> {{ $d->eye }}
+                                </p>
                             </div>
                             <div class="bottom-line">
                                 <p class="mbr-text mbr-fonts-style display-7"> {{$d->description}} </p>
@@ -38,9 +38,8 @@
 
 
                             <div class="mbr-section-btn item-footer mt-2">
-                                <a href="{{ route('downloadInfore',$d->file )}}"
-                                   class="btn btn-primary item-btn display-7">Yuklab olish
-                                </a>
+                                <a href="{{ route( 'downloadinfore', $d->file )}}"
+                                   class="btn btn-primary item-btn display-7">Yuklab olish</a>
                             </div>
 
                         </div>
