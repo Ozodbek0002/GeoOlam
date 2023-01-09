@@ -12,9 +12,8 @@ use App\Models\Book;
 class DownloadController extends Controller
 {
 
-    public function downloadinfore($file_name)
+    public function downloadInfore($file_name)
     {
-
         $book = Information::where('file', $file_name)->first();
         $book->eye = $book->eye + 1;
         $book->save();
