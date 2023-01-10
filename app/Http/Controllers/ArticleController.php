@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\File;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = Article::paginate(10);
@@ -79,7 +75,6 @@ class ArticleController extends Controller
 
             if (Article::exists($image_path)) {
                 File::delete($image_path);
-//            unlink($image_path);
             }
 
             $image = $request->file;

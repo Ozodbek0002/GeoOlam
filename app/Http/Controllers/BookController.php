@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -45,13 +46,11 @@ class BookController extends Controller
         $data->author = $book['author'];
         $data->category = $request->category;
 
-        $image = $request->image;
-        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $imagename = $request->file('image')->getClientOriginalName();
         $request->image->move('books', $imagename);
         $data->image = $imagename;
 
-        $file = $request->file;
-        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $filename = $request->file('file')->getClientOriginalName();
         $request->file->move('books', $filename);
         $data->file = $filename;
 
@@ -60,23 +59,13 @@ class BookController extends Controller
         return redirect()->route('admin.books');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Book $book)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Book $book)
     {
         return view('admin.books.edit',[
@@ -84,13 +73,7 @@ class BookController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Book $book)
     {
 
@@ -100,15 +83,27 @@ class BookController extends Controller
         $book->category = $request->category;
 
         if ($request->image != null) {
-            $image = $request->image;
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+            $image_path = public_path("books/{$book->image}");
+
+            if (Book::exists($image_path)) {
+            File::delete($image_path);
+            }
+
+            $imagename = $request->file('image')->getClientOriginalName();
             $request->image->move('books', $imagename);
             $book->image = $imagename;
         };
 
         if ($request->file != null) {
-            $file = $request->file;
-            $filename = time() . '.' . $file->getClientOriginalExtension();
+
+            $image_path = public_path("books/{$book->file}");
+
+            if (Book::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $filename = $request->file('file')->getClientOriginalName();
             $request->file->move('books', $filename);
             $book->file = $filename;
         };
@@ -118,14 +113,19 @@ class BookController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Book $book)
     {
+        $image_path = public_path("books/{$book->file}");
+        $file_path = public_path("books/{$book->image}");
+
+        if (Book::exists($image_path)) {
+            File::delete($image_path);
+        }
+        if (Book::exists($file_path)) {
+            File::delete($file_path);
+        }
+
         $book->delete();
         return redirect()->route('admin.books');
     }

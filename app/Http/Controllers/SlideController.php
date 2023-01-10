@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class SlideController extends Controller
 {
@@ -56,13 +58,11 @@ class SlideController extends Controller
         $data->description = $slide['description'];
         $data->category = $request->category;
 
-        $image = $request->image;
-        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $imagename = $request->file('image')->getClientOriginalName();
         $request->image->move('slides', $imagename);
         $data->image = $imagename;
 
-        $file = $request->file;
-        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $filename = $request->file('file')->getClientOriginalName();
         $request->file->move('slides', $filename);
         $data->file = $filename;
 
@@ -72,23 +72,15 @@ class SlideController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Slide  $slide
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function show(Slide $slide)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Slide  $slide
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function edit(Slide $slide)
     {
         return view('admin.slides.edit',[
@@ -96,43 +88,56 @@ class SlideController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Slide  $slide
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function update(Request $request, Slide $slide)
     {
         $slide->title = $request->title;
         $slide->description = $request->description;
 
         if ($request->image != null) {
-            $image = $request->image;
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+            $image_path = public_path("slides/{$slide->image}");
+
+            if (Slide::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $imagename = $request->file('image')->getClientOriginalName();
             $request->image->move('slides', $imagename);
             $slide->image = $imagename;
         };
 
         if ($request->file != null) {
-            $file = $request->file;
-            $filename = time() . '.' . $file->getClientOriginalExtension();
+
+            $image_path = public_path("slides/{$slide->file}");
+
+            if (Slide::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $filename = $request->file('file')->getClientOriginalName();
             $request->file->move('slides', $filename);
             $slide->file = $filename;
         };
+
         $slide->save();
         return redirect()->route('admin.slides');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Slide  $slide
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Slide $slide)
     {
+        $image_path = public_path("slides/{$slide->file}");
+        $file_path = public_path("slides/{$slide->image}");
+
+        if (Slide::exists($image_path)) {
+            File::delete($image_path);
+        }
+        if (Slide::exists($file_path)) {
+            File::delete($file_path);
+        }
+
         $slide->delete();
         return redirect()->route('admin.slides');
     }

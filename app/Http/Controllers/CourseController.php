@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CourseController extends Controller
 {
@@ -42,8 +43,7 @@ class CourseController extends Controller
         $data->title_uz = $course['title'];
         $data->description = $course['description'];
 
-        $file = $request->file;
-        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $filename = $request->file('file')->getClientOriginalName();
         $request->file->move('courses', $filename);
         $data->file = $filename;
 
@@ -69,10 +69,16 @@ class CourseController extends Controller
         $course->category = $request->category;
 
         if ($request->file != null) {
-            $image = $request->file;
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $request->file->move('courses', $imagename);
-            $course->file = $imagename;
+
+            $image_path = public_path("courses/{$course->file}");
+
+            if (Course::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $filename = $request->file('file')->getClientOriginalName();
+            $request->file->move('courses', $filename);
+            $course->file = $filename;
         }
 
         $course->save();
@@ -83,6 +89,12 @@ class CourseController extends Controller
 
     public function destroy(Course $course)
     {
+        $image_path = public_path("courses/{$course->file}");
+
+        if (Course::exists($image_path)) {
+            File::delete($image_path);
+        }
+
         $course->delete();
         return redirect()->route('admin.course');
     }

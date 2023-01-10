@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Information;
 use Illuminate\Console\View\Components\Info;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class InformationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = Information::paginate(10);
@@ -21,22 +19,13 @@ class InformationController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('admin.information.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $data = new Information();
@@ -58,15 +47,13 @@ class InformationController extends Controller
         $data->description = $information['description'];
 
 
-        $image = $request->image;
-        $imagename = time().'.'.$image->getClientOriginalExtension();
+        $imagename = $request->file('image')->getClientOriginalName();
         $request->image->move('information',$imagename);
         $data->image = $imagename;
 
 
 
-        $file = $request->file;
-        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $filename = $request->file('file')->getClientOriginalName();
         $request->file->move('information', $filename);
         $data->file = $filename;
 
@@ -77,23 +64,13 @@ class InformationController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         $data = Information::find($id);
@@ -102,49 +79,62 @@ class InformationController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $data = Information::find($id);
 
-        $data->title = $request->title;
-        $data->description = $request->description;
+    public function update(Request $request, Information $information)
+    {
+
+
+        $information->title = $request->title;
+        $information->description = $request->description;
 
         if ($request->image != null) {
-            $image = $request->image;
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+            $image_path = public_path("information/{$information->image}");
+
+            if (Information::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $imagename = $request->file('image')->getClientOriginalName();
             $request->image->move('information', $imagename);
-            $data->image = $imagename;
+            $information->image = $imagename;
         };
 
         if ($request->file != null) {
-            $file = $request->file;
-            $filename = time() . '.' . $file->getClientOriginalExtension();
+
+            $image_path = public_path("information/{$information->file}");
+
+            if (Information::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $filename = $request->file('file')->getClientOriginalName();
             $request->file->move('information', $filename);
-            $data->file = $filename;
+            $information->file = $filename;
         };
 
-        $data->save();
+        $information->save();
 
         return redirect()->route('admin.information');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(Information $information)
     {
-        $data = Information::find($id);
-        $data->delete();
+        $image_path = public_path("information/{$information->image}");
+
+        if (Information::exists($image_path)) {
+            File::delete($image_path);
+        }
+
+        $file_path = public_path("information/{$information->file}");
+
+        if (Information::exists($file_path)) {
+            File::delete($file_path);
+        }
+
+        $information->delete();
+
         return redirect()->route('admin.information');
     }
 }

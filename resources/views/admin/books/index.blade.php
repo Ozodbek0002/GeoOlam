@@ -32,7 +32,7 @@
 
                         @foreach($books as $ind=>$book)
                             <tr>
-{{--                                <td class="col-1">{{($books->currentpage()-1)*($books->perpage())+$ind+1}}</td>--}}
+                                <td class="col-1">{{($books->currentpage()-1)*($books->perpage())+$ind+1}}</td>
                                 <td>{{$book->title}}</td>
                                 <td>{{$book->description}}</td>
                                 <td>{{$book->author}}</td>
