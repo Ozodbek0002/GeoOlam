@@ -41,7 +41,9 @@
                                     <td>English</td>
                                 @endif
                                 <td class="col-2">
-                                    <form action="{{ route('admin.course.destroy',$course->id) }}" method="POST">
+                                    <form action="{{ route('admin.course.destroy',$course->id) }}" method="POST"
+                                          onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
+                                    >
                                         <a class="btn btn-warning btn-sm"
                                            href="{{ route('admin.course.edit',$course->id) }}">
                                             <span class="btn-label">

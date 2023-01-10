@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ArticleController extends Controller
 {
@@ -72,6 +74,14 @@ class ArticleController extends Controller
         $article->category = $request->category;
 
         if ($request->file != null) {
+
+            $image_path = public_path("articles/{$article->file}");
+
+            if (Article::exists($image_path)) {
+                File::delete($image_path);
+//            unlink($image_path);
+            }
+
             $image = $request->file;
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->file->move('articles', $imagename);
@@ -86,6 +96,16 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
+//        if (isset($article->file)){
+//            Storage::delete($article->file);
+//        }
+
+        $image_path = public_path("articles/{$article->file}");
+        if (Article::exists($image_path)) {
+            File::delete($image_path);
+//            unlink($image_path);
+        }
+
         $article->delete();
         return redirect()->route('admin.articles');
     }

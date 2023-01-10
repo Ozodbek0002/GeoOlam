@@ -30,7 +30,9 @@
                                 <td>{{$con->created_at}}</td>
 
                                 <td class="col-2">
-                                    <form action="{{ route('contacts.destroy',$con->id) }}" method="POST">
+                                    <form action="{{ route('contacts.destroy',$con->id) }}" method="POST"
+                                          onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
+                                    >
                                         <a class="btn btn-warning btn-sm" onclick="Oqidm()" >
                                             <span class="btn-label">
                                                 <i class="fa fa-eye"></i>

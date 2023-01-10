@@ -50,7 +50,9 @@
                                 <td><img src="{{asset("books/$book->image")}}" alt="image" style="height: 100px; width: 100px"></td>
 
                                 <td class="col-2">
-                                    <form action="{{ route('admin.books.destroy',$book->id) }}" method="POST">
+                                    <form action="{{ route('admin.books.destroy',$book->id) }}" method="POST"
+                                          onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
+                                    >
                                         <a class="btn btn-warning btn-sm"
                                            href="{{ route('admin.books.edit',$book->id) }}">
                                     <span class="btn-label">

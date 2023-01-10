@@ -35,7 +35,9 @@
                                     <td>{{$information->description}}</td>
                                     <td><img src="{{asset("information/$information->image")}}" alt="image" style="height: 100px; width: 100px"></td>
                                     <td class="col-2">
-                                        <form action="{{ route('admin.information.destroy',$information->id) }}" method="POST">
+                                        <form action="{{ route('admin.information.destroy',$information->id) }}" method="POST"
+                                              onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
+                                        >
                                             <a class="btn btn-warning btn-sm"
                                                href="{{ route('admin.information.edit',$information->id) }}">
                                             <span class="btn-label">
