@@ -47,6 +47,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{  request()->routeIs('information') ? 'active' : '' }}">
+                    <a href="{{ route('admin.information') }}">
+                        <i class="bi bi-envelope-plus"></i>
+                        <p>Videolar</p>
+                    </a>
+                </li>
+
                 <li class="nav-item {{  request()->routeIs('contacts') ? 'active' : '' }}">
                     <a href="{{ route('contacts') }}">
                         <i class="bi bi-chat-dots"></i>
