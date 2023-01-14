@@ -50,7 +50,7 @@ class RouteController extends Controller
 
     public function slide_uz()
     {
-        $slides = Slide::where('category', 'uz')->latest()->paginate(6);
+        $slides = Slide::where('category', 'uz')->latest()->paginate(8);
         $title = 'Uzbekcha Slaydlar';
         return view('user.slide', [
             'slides' => $slides,
@@ -60,7 +60,7 @@ class RouteController extends Controller
 
     public function slide_ru()
     {
-        $slides = Slide::where('category', 'ru')->get();
+        $slides = Slide::where('category', 'ru')->latest()->paginate(8);
         $title = 'Ruscha Slaydlar';
         return view('user.slide', [
             'slides' => $slides,
@@ -70,7 +70,7 @@ class RouteController extends Controller
 
     public function slide_en()
     {
-        $slides = Slide::where('category', 'en')->get();
+        $slides = Slide::where('category', 'en')->latest()->paginate(8);
         $title = 'Inglischa Slaydlar';
         return view('user.slide', [
             'slides' => $slides,
@@ -122,7 +122,7 @@ class RouteController extends Controller
 
     public function cource_uz()
     {
-        $cources = Course::where('category', 'uz')->get();
+        $cources = Course::where('category', 'uz')->latest()->paginate(8);
         $title = "Uzbekcha Kurs ishlar";
         return view('user.cource', [
             'cources' => $cources,
@@ -132,7 +132,7 @@ class RouteController extends Controller
 
     public function cource_ru()
     {
-        $cources = Course::where('category', 'ru')->get();
+        $cources = Course::where('category', 'ru')->latest()->paginate(8);
         $title = "Ruscha Kurs ishlar";
         return view('user.cource', [
             'cources' => $cources,
@@ -142,7 +142,7 @@ class RouteController extends Controller
 
     public function cource_en()
     {
-        $cources = Course::where('category', 'en')->get();
+        $cources = Course::where('category', 'en')->latest()->paginate(8);
         $title = "Inglischa Kurs ishlar";
         return view('user.cource', [
             'cources' => $cources,
@@ -153,7 +153,7 @@ class RouteController extends Controller
 
     public function informations()
     {
-        $data = Information::all();
+        $data = Information::latest()->paginate(8);
         return view('user.informations',[
             'data' => $data,
             'title' => 'Qiziqarli Ma`lumotlar'

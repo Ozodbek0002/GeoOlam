@@ -43,11 +43,11 @@
                 <div class="container">
                     <div class="row justify-content-center">
 
-{{--                        @if ($cources->links())--}}
-{{--                            <div class="mt-4 p-4 box has-text-centered">--}}
-{{--                                {{ $cources->links() }}--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
+                        @if ($cources->links())
+                            <div class="mt-4 p-4 box has-text-centered">
+                                {{ $cources->links() }}
+                            </div>
+                        @endif
 
                     </div>
                 </div>
