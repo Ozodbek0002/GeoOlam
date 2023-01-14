@@ -107,16 +107,26 @@
                                 <a class="text-black show dropdown-item text-primary display-7" href="{{route('cource_uz')}}">O`zbekcha kurs ishlar</a>
                                 <a class="text-black show dropdown-item display-7" href="{{route('cource_ru')}}">Ruscha kurs ishlar</a>
                                 <a class="text-black show dropdown-item display-7" href="{{route('cource_en')}}">Inglizcha kurs ishlar</a>
-
                             </div>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link link text-black text-primary display-7"
-                                                href="{{route('informations')}}">Qiziqarli ma`lumotlar</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-black dropdown-toggle display-7" data-toggle="dropdown-submenu"
+                               data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Galereya</a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdown-951">
+                                <a class="text-black show dropdown-item text-primary display-7" href="{{route('informations')}}">Qiziqarli ma`lumotlar</a>
+                                <a class="text-black show dropdown-item display-7" href="{{route('videos')}}">Videolar</a>
+                            </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link link text-black text-primary display-7"
-                                                href="{{route('videos')}}">Videolar</a>
-                        </li>
+
+{{--                        <li class="nav-item"><a class="nav-link link text-black text-primary display-7"--}}
+{{--                                                href="{{route('informations')}}">Qiziqarli ma`lumotlar</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item"><a class="nav-link link text-black text-primary display-7"--}}
+{{--                                                href="{{route('videos')}}">Videolar</a>--}}
+{{--                        </li>--}}
 
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-7"
                                                 href="{{route('contact')}}">Aloqa</a>
