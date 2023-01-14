@@ -51,12 +51,7 @@ class VideoController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Video  $video
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Video $video)
     {
 //        $videos = Video::find($id);
