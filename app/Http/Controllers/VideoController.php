@@ -61,13 +61,7 @@ class VideoController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Video  $video
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Video $video)
     {
 //        $videos = Video::find($id);
@@ -95,12 +89,7 @@ class VideoController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Video  $video
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Video $video)
     {
         $video->delete();
