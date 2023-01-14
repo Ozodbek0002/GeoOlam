@@ -11,6 +11,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\VideoController;
 
 
 
@@ -55,11 +56,13 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     })->name('index');
 
     Route::get('/users', [AdminController::class, 'index'])->name('users');
+
     Route::resource('articles', ArticleController::class)->name('index', 'articles');
     Route::resource('slides', SlideController::class)->name('index', 'slides');
     Route::resource('books', BookController::class)->name('index', 'books');
     Route::resource('course', CourseController::class)->name('index', 'course');
     Route::resource('information',InformationController::class)->name('index','information');
+    Route::resource('videos',VideoController::class)->name('index','videos');
 
 });
 
