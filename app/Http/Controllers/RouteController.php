@@ -18,7 +18,7 @@ class RouteController extends Controller
     public function article_uz()
     {
 
-        $articles = Article::where('category', 'uz')->get();
+        $articles = Article::where('category', 'uz')->latest()->paginate(8);
         $title = 'Uzbekcha Maqolalar';
         return view('user.article', [
             'articles' => $articles,
@@ -29,7 +29,7 @@ class RouteController extends Controller
 
     public function article_en()
     {
-        $articles = Article::where('category', 'en')->get();
+        $articles = Article::where('category', 'en')->latest()->paginate(8);
         $title = 'Inglischa Maqolalar';
         return view('user.article', [
             'articles' => $articles,
@@ -39,7 +39,7 @@ class RouteController extends Controller
 
     public function article_ru()
     {
-        $articles = Article::where('category', 'ru')->get();
+        $articles = Article::where('category', 'ru')->latest()->paginate(8);
         $title = 'Ruscha Maqolalar';
         return view('user.article', [
             'articles' => $articles,
@@ -81,7 +81,7 @@ class RouteController extends Controller
 
     public function book_lu()
     {
-        $books = Book::where('category', 'lu')->get();
+        $books = Book::where('category', 'lu')->latest()->paginate(8);
         $title = 'Lug`atlar';
         return view('user.book', [
             'books' => $books,
@@ -91,7 +91,7 @@ class RouteController extends Controller
 
     public function book_en()
     {
-        $books = Book::where('category', 'en')->get();
+        $books = Book::where('category', 'en')->latest()->paginate(8);
         $title = 'Ensiklopediyalar';
         return view('user.book', [
             'books' => $books,
@@ -101,7 +101,7 @@ class RouteController extends Controller
 
     public function book_mo()
     {
-        $books = Book::where('category', 'mo')->get();
+        $books = Book::where('category', 'mo')->latest()->paginate(8);
         $title = 'Monografiyalar';
         return view('user.book', [
             'books' => $books,
@@ -111,7 +111,7 @@ class RouteController extends Controller
 
     public function book_us()
     {
-        $books = Book::where('category', 'us')->get();
+        $books = Book::where('category', 'us')->latest()->paginate(8);
         $title = 'Uslubiy qo`llanmalar';
         return view('user.book', [
             'books' => $books,
