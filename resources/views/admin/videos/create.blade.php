@@ -29,7 +29,7 @@
 
 
                         <div class="form-group">
-                            <label for="services">Video Name</label>
+                            <label for="services">Video nomi</label>
                             <input required="" type="text" name="name" class="form-control" id="photo_name"
                                    placeholder="Video Name">
                             @error('name')
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="cost">Video url</label>
+                            <label for="cost">Video url <b style="color: red">( You Tube )</b></label>
                             <input required="" type="text" name="url" class="form-control" id="photo" placeholder=" Video Url ">
                             @error('url')
                             <span class="text-danger">{{ $message }}</span>
