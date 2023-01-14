@@ -19,14 +19,12 @@
 
                     <div class="card col-12 col-md-6">
                         <div class="card-wrapper">
-                            <div class="col-12 col-md-3">
-                                <div style="width: 440px; " >
-                                    <iframe width="200" height="200" src="{{$d->url}}" title="YouTube video player"
-                                            frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                    </iframe>
-                                </div>
+                            <div class="col-12 ">
+                                <iframe style="width: 80% "  src="{{$d->url}}" title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                </iframe>
                             </div>
                             <div class="top-line">
                                 <h6 class="card-title mbr-fonts-style display-5"><strong>{{$d->name}}</strong></h6>
