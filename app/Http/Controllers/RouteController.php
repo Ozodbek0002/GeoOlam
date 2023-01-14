@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Slide;
@@ -159,6 +160,13 @@ class RouteController extends Controller
         ]);
     }
 
+    public function videos(){
+        $videos = Video::latest()->paginate(6);
+
+        return view('user.videos',[
+            'videos'=>$videos,
+        ]);
+    }
 
     public function contact()
     {

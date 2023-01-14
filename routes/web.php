@@ -36,6 +36,7 @@ Route::get('/cource_uz', [RouteController::class, 'cource_uz'])->name('cource_uz
 Route::get('/cource_ru', [RouteController::class, 'cource_ru'])->name('cource_ru');
 Route::get('/cource_en', [RouteController::class, 'cource_en'])->name('cource_en');
 Route::get('/informations', [RouteController::class, 'informations'])->name('informations');
+Route::get('/videos', [RouteController::class, 'videos'])->name('videos');
 
 Route::get('/contact', [RouteController::class, 'contact'])->name('contact');
 Route::resource('contacts', ContactController::class)->name('index', 'contacts');
