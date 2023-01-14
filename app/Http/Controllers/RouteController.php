@@ -50,7 +50,7 @@ class RouteController extends Controller
 
     public function slide_uz()
     {
-        $slides = Slide::where('category', 'uz')->get();
+        $slides = Slide::where('category', 'uz')->latest()->paginate(6);
         $title = 'Uzbekcha Slaydlar';
         return view('user.slide', [
             'slides' => $slides,

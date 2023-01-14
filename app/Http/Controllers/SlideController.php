@@ -94,6 +94,7 @@ class SlideController extends Controller
     {
         $slide->title = $request->title;
         $slide->description = $request->description;
+        $slide->category = $request->category;
 
         if ($request->image != null) {
 
