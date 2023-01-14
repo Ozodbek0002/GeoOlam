@@ -42,7 +42,7 @@ class VideoController extends Controller
 
         $data->save();
 
-        return redirect()->back();
+        return redirect()->route('admin.videos');
     }
 
 
@@ -93,6 +93,6 @@ class VideoController extends Controller
     public function destroy(Video $video)
     {
         $video->delete();
-        return redirect()->back();
+        return redirect()->route('admin.videos');
     }
 }

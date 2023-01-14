@@ -42,14 +42,22 @@
                                 </td>
 
                                 <td>
-                                    <a href="{{ route('video.edit',$dat->id) }}">
-                                        <button class="btn btn-warning">Tahrirlash</button>
-                                    </a>
+                                    <form action="{{ route('admin.videos.destroy',$dat->id) }}" method="POST"
+                                          onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
+                                    >
+                                        <a class="btn btn-warning btn-sm"
+                                           href="{{ route('admin.videos.edit',$dat->id) }}">
+                                    <span class="btn-label">
+                                        <i class="fa fa-pen"></i>
+                                    </span>
 
-                                    <a href="{{ route('video.destroy',$dat->id) }}">
-                                        <button class="btn btn-danger">O'chirish</button>
-                                    </a>
-
+                                        </a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm"><span class="btn-label">
+                                        <i class="fa fa-trash"></i>
+                                    </span></button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

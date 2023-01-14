@@ -45,8 +45,6 @@
                             @enderror
                         </div>
 
-
-
                         <button type="submit" id="alert" class="btn btn-primary ">Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
 
