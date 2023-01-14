@@ -54,8 +54,6 @@ class VideoController extends Controller
 
     public function edit(Video $video)
     {
-//        $videos = Video::find($id);
-
         return view('admin.videos.edit', [
             'data' => $video,
         ]);
@@ -64,7 +62,6 @@ class VideoController extends Controller
 
     public function update(Request $request, Video $video)
     {
-//        $videos = Video::find($id);
 
         $video->name = $request->name;
         if ($request->url != null) {
@@ -86,7 +83,7 @@ class VideoController extends Controller
         }
         $video->save();
 
-        return redirect()->back();
+        return redirect()->route('admin.videos');
     }
 
 
