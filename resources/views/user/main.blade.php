@@ -12,7 +12,7 @@
             <div class="row justify-content-center align-items-center">
 
                 <div class="col-12 col-md-6 image-wrapper">
-                    <img src="assets/images/photo-2022-11-30-20-59-58-640x640.jpg" alt="">
+                    <img src="assets/images/haykal.jpg" alt="">
                 </div>
 
                 <div class="col-12 col-md">

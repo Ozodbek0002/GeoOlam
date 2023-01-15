@@ -64,7 +64,7 @@
                                     maqolalar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('article_ru')}}">Ruscha
                                     maqolalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('article_en')}}">Inglischa
+                                <a class="text-black dropdown-item display-7" href="{{route('article_en')}}">Inglizcha
                                     maqolalar</a>
 
                             </div>
@@ -77,7 +77,7 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-795">
 
-                                <a class="text-black dropdown-item text-primary display-7" href="{{route('slide_uz')}}">O`zbekcha slaydlar</a>
+                                <a class="text-black dropdown-item text-primary display-7" href="{{route('slide_uz')}}">O'zbekcha slaydlar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('slide_ru')}}">Ruscha slaydlar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('slide_en')}}">Inglizcha slaydlar</a>
 
@@ -104,7 +104,7 @@
                                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Kurs ishlari</a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdown-951">
-                                <a class="text-black show dropdown-item text-primary display-7" href="{{route('cource_uz')}}">O`zbekcha kurs ishlar</a>
+                                <a class="text-black show dropdown-item text-primary display-7" href="{{route('cource_uz',['type'=>'uz'])}}">O`zbekcha kurs ishlar</a>
                                 <a class="text-black show dropdown-item display-7" href="{{route('cource_ru')}}">Ruscha kurs ishlar</a>
                                 <a class="text-black show dropdown-item display-7" href="{{route('cource_en')}}">Inglizcha kurs ishlar</a>
                             </div>
