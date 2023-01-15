@@ -17,16 +17,22 @@
 
                 <div class="col-12 col-md">
                     <div class="text-wrapper">
+
                         <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2">
                             <strong style="font-size: xxx-large"> Geo<a  href="https://earth.google.com/web/" class="text-primary" target="_blank">🌏</a>lam</strong>
                         </h1>
 
-{{--                        <p class="mbr-text mbr-fonts-style display-7">Yozasan ............<br>jdnckjfnvkjfnvkd ......</p>--}}
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Yozasan ............<br>
+                            jdnckjfnvkjfnvkd ......
+                        </p>
 
                     </div>
                 </div>
             </div>
         </div>
+
+
 
     </section>
 
