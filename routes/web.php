@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 
 // user view
-Route::get('/article_uz', [RouteController::class, 'article_uz'])->name('article_uz');
+Route::any('/article_uz', [RouteController::class, 'article_uz'])->name('article_uz');
 Route::get('/article_en', [RouteController::class, 'article_en'])->name('article_en');
 Route::get('/article_ru', [RouteController::class, 'article_ru'])->name('article_ru');
 Route::get('/slide_uz', [RouteController::class, 'slide_uz'])->name('slide_uz');
