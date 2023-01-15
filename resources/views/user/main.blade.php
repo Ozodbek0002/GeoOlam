@@ -23,8 +23,8 @@
                         </h1>
 
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Yozasan ............<br>
-                            jdnckjfnvkjfnvkd ......
+                            Ushbu saytda foydalanuvchilar uchun qulaylik yaratish maqsadida  <b> Xorazm viloyati </b> haqida turli hil
+                                ma'lumotlar jamlangan.
                         </p>
 
                     </div>
