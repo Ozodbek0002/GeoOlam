@@ -23,7 +23,7 @@
                         </h1>
 
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Ushbu saytda foydalanuvchilar uchun qulaylik yaratish maqsadida  <b> Xorazm viloyati </b> haqida turli hil
+                            Ushbu saytda foydalanuvchilar uchun qulaylik yaratish maqsadida  <b> Xorazm viloyati </b> haqida turli xil
                                 ma'lumotlar jamlangan.
                         </p>
 
