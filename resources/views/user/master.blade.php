@@ -121,12 +121,6 @@
                             </div>
                         </li>
 
-{{--                        <li class="nav-item"><a class="nav-link link text-black text-primary display-7"--}}
-{{--                                                href="{{route('informations')}}">Qiziqarli ma`lumotlar</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item"><a class="nav-link link text-black text-primary display-7"--}}
-{{--                                                href="{{route('videos')}}">Videolar</a>--}}
-{{--                        </li>--}}
 
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-7"
                                                 href="{{route('contact')}}">Aloqa</a>

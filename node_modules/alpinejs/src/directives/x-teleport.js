@@ -1,13 +1,20 @@
+import { onlyDuringClone, skipDuringClone } from "../clone"
 import { directive } from "../directives"
 import { addInitSelector, initTree } from "../lifecycle"
 import { mutateDom } from "../mutation"
 import { addScopeToNode } from "../scope"
 import { warn } from "../utils/warn"
 
-directive('teleport', (el, { expression }, { cleanup }) => {
+let teleportContainerDuringClone = document.createElement('div')
+
+directive('teleport', (el, { modifiers, expression }, { cleanup }) => {
     if (el.tagName.toLowerCase() !== 'template') warn('x-teleport can only be used on a <template> tag', el)
 
-    let target = document.querySelector(expression)
+    let target = skipDuringClone(() => {
+        return document.querySelector(expression)
+    }, () => {
+        return teleportContainerDuringClone
+    })()
 
     if (! target) warn(`Cannot find x-teleport element for selector: "${expression}"`)
 
@@ -31,7 +38,16 @@ directive('teleport', (el, { expression }, { cleanup }) => {
     addScopeToNode(clone, {}, el)
 
     mutateDom(() => {
-        target.appendChild(clone)
+        if (modifiers.includes('prepend')) {
+            // insert element before the target
+            target.parentNode.insertBefore(clone, target)
+        } else if (modifiers.includes('append')) {
+            // insert element after the target
+            target.parentNode.insertBefore(clone, target.nextSibling)
+        } else {
+            // origin
+            target.appendChild(clone)
+        }
 
         initTree(clone)
 

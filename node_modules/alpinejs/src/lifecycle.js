@@ -1,7 +1,6 @@
 import { startObservingMutations, onAttributesAdded, onElAdded, onElRemoved, cleanupAttributes } from "./mutation"
 import { deferHandlingDirectives, directives } from "./directives"
 import { dispatch } from './utils/dispatch'
-import { nextTick } from "./nextTick"
 import { walk } from "./utils/walk"
 import { warn } from './utils/warn'
 
@@ -69,9 +68,17 @@ export function isRoot(el) {
     return rootSelectors().some(selector => el.matches(selector))
 }
 
-export function initTree(el, walker = walk) {
+let initInterceptors = []
+
+export function interceptInit(callback) { initInterceptors.push(callback) }
+
+export function initTree(el, walker = walk, intercept = () => {}) {
     deferHandlingDirectives(() => {
         walker(el, (el, skip) => {
+            intercept(el, skip)
+
+            initInterceptors.forEach(i => i(el, skip))
+
             directives(el, el.attributes).forEach(handle => handle())
 
             el._x_ignore && skip()
@@ -79,6 +86,6 @@ export function initTree(el, walker = walk) {
     })
 }
 
-function destroyTree(root) {
+export function destroyTree(root) {
     walk(root, el => cleanupAttributes(el))
 }
