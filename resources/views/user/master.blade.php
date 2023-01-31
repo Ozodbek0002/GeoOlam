@@ -10,7 +10,6 @@
         <link rel="shortcut icon" href="{{asset('assets/images/newlogo.png')}}" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="description" content="">
-
         <title>GeoOlam</title>
         <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
         <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
@@ -23,7 +22,6 @@
         <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
         <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
         <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-
     </head>
 
 
