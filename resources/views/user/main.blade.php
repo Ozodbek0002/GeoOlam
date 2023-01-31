@@ -12,7 +12,7 @@
             <div class="row justify-content-center align-items-center">
 
                 <div class="col-12 col-md-6 image-wrapper">
-                    <img src="assets/images/haykal.jpg" alt="">
+                    <img src="{{asset('assets/images/haykal.jpg')}}" alt="">
                 </div>
 
                 <div class="col-12 col-md">

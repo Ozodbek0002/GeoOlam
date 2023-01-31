@@ -7,10 +7,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="generator" content="Mobirise v5.0.29, mobirise.com">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-        <link rel="shortcut icon" href="assets/images/newlogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="{{asset('assets/images/newlogo.png')}}" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="description" content="">
-
 
         <title>GeoOlam</title>
         <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
@@ -25,7 +24,6 @@
         <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
         <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
 
-
     </head>
 
 
@@ -33,7 +31,6 @@
 
     {{--    // Navbar--}}
     <section data-bs-version="5.1" class="menu menu1 cid-tnKcgWlJdZ" once="menu" id="menu1-1">
-
 
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
@@ -120,7 +117,6 @@
                                 <a class="text-black show dropdown-item display-7" href="{{route('videos')}}">Videolar</a>
                             </div>
                         </li>
-
 
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-7"
                                                 href="{{route('contact')}}">Aloqa</a>
