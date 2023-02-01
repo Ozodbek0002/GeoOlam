@@ -51,13 +51,11 @@ Route::get('downloadInfore/{file_name}',[DownloadController::class, 'downloadInf
 
 //admin routes
 Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(function () {
-
     Route::get('/', function () {
         return view('admin.master');
     })->name('index');
 
     Route::get('/users', [AdminController::class, 'index'])->name('users');
-
     Route::resource('articles', ArticleController::class)->name('index', 'articles');
     Route::resource('slides', SlideController::class)->name('index', 'slides');
     Route::resource('books', BookController::class)->name('index', 'books');
