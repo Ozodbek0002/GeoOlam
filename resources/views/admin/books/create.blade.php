@@ -1,5 +1,7 @@
 @extends('admin.master')
 @section('content')
+
+
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
@@ -24,7 +26,6 @@
 
                     <form action="{{route('admin.books.store')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                         @csrf
-
 
                         <div class="form-group">
 
