@@ -88,7 +88,7 @@
 
                                 <a class="text-black dropdown-item text-primary display-7" href="{{route('book_lu')}}">Lug'atlar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('book_en')}}">Ensiklopediyalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('book_mo')}}">Monografiyalar</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('book_mo')}}">Monografiya chiqarish(Tipografiya xizmati)</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('book_us')}}">Uslubiy qo'llanmalar</a>
 
                             </div>
@@ -154,13 +154,13 @@
 
                             <li class="mbr-text item-wrap"><br></li>
 
-                            <li class="mbr-text item-wrap">
-                                <strong>
-                                    <a href="https://t.me/Muallif2" class="text-secondary" target="_blank">
-                                        Reklama xizmati mavjud
-                                    </a>
-                                </strong>
-                            </li>
+{{--                            <li class="mbr-text item-wrap">--}}
+{{--                                <strong>--}}
+{{--                                    <a href="https://t.me/Muallif2" class="text-secondary" target="_blank">--}}
+{{--                                        Reklama xizmati mavjud--}}
+{{--                                    </a>--}}
+{{--                                </strong>--}}
+{{--                            </li>--}}
 
                             <li class="mbr-text item-wrap"><br></li>
 
