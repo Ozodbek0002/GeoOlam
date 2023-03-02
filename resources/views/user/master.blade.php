@@ -172,8 +172,7 @@
                         <ul class="list mbr-fonts-style display-4">
                             <li class="mbr-text item-wrap">Ilmiy maqolalar chop etish</li>
                             <li class="mbr-text item-wrap">Uslubiy qo'llanmalar chiqarish</li>
-                            <li class="mbr-text item-wrap">Monografiya&nbsp; chiqarish</li>
-                            <li class="mbr-text item-wrap">Tipagirafiya chiqarish</li>
+                            <li class="mbr-text item-wrap">Monografiya&nbsp; chiqarish (Tipografiya xizmati)</li>
                             <li class="mbr-text item-wrap"><br></li>
                         </ul>
                     </div>
