@@ -88,7 +88,7 @@
 
                                 <a class="text-black dropdown-item text-primary display-7" href="{{route('book_lu')}}">Lug'atlar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('book_en')}}">Ensiklopediyalar</a>
-                                <a class="text-black dropdown-item display-7" href="{{route('book_mo')}}">Monografiya chiqarish(Tipografiya xizmati)</a>
+                                <a class="text-black dropdown-item display-7" href="{{route('book_mo')}}">Monografiyalar</a>
                                 <a class="text-black dropdown-item display-7" href="{{route('book_us')}}">Uslubiy qo'llanmalar</a>
 
                             </div>
@@ -173,6 +173,7 @@
                             <li class="mbr-text item-wrap">Ilmiy maqolalar chop etish</li>
                             <li class="mbr-text item-wrap">Uslubiy qo'llanmalar chiqarish</li>
                             <li class="mbr-text item-wrap">Monografiya&nbsp; chiqarish</li>
+                            <li class="mbr-text item-wrap">Tipagirafiya chiqarish</li>
                             <li class="mbr-text item-wrap"><br></li>
                         </ul>
                     </div>
