@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('title_uz');
-            $table->string('description');
+            $table->text('description');
             $table->string('file');
             $table->integer('eye')->default(0);
             $table->string('category');
