@@ -31,8 +31,8 @@
                         @foreach($articles as $ind=>$poet)
                             <tr>
                                 <td class="col-1">{{($articles->currentpage()-1)*($articles->perpage())+$ind+1}}</td>
-                                <td>{!! $poet->title  !!}</td>
-                                <td>{!! $poet->description !!}</td>
+                                <td>{{  substr($poet->description, 0, 50) }} ... </td>
+                                <td>{{  substr($poet->title, 0, 50 ) }} ... </td>
                                 @if($poet->category == 'uz')
                                     <td>Uzbek</td>
                                 @elseif($poet->category == 'ru')

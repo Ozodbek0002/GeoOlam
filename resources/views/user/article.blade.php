@@ -21,14 +21,39 @@
                     <div class="card col-12 col-md-6">
                         <div class="card-wrapper">
                             <div class="top-line">
-                                <h6 class="card-title mbr-fonts-style display-5"><strong>{{$article->title}}</strong>
+                                <h6 class="card-title mbr-fonts-style display-5">
+                                    <?php
+                                    if (strlen($article->title) < 100) {
+                                        ?>
+                                    <strong>{{ $article->title }}</strong>
+                                        <?php
+                                    }
+                                    else {
+                                        ?>
+                                    <strong>{{ substr($article->title,0,100)}} ...</strong>
+                                        <?php
+                                    }
+                                    ?>
+
                                 </h6>
                                 <p class="mbr-text cost mbr-fonts-style display-5"></p>
                             </div>
 
 
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7"> {{$article->description}} </p>
+                                    <?php
+                                if (strlen($article->description) < 100) {
+                                    ?>
+                                <p class="mbr-text mbr-fonts-style display-7"> {{ $article->description }} </p>
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                <p class="mbr-text mbr-fonts-style display-7"> {{ substr($article->description,0,100 )}}
+                                    ... </p>
+                                    <?php
+                                }
+                                    ?>
                             </div>
 
 
