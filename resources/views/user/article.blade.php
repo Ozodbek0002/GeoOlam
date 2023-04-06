@@ -16,6 +16,7 @@
                 </div>
 
 
+
                 @foreach ( $articles as $article)
 
                     <div class="card col-12 col-md-6">
