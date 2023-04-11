@@ -41,7 +41,8 @@
                             </div>
 
 
-                            <div class="bottom-line">
+
+                            <div class="">
                                     <?php
                                 if (strlen($article->description) < 100) {
                                     ?>
@@ -57,14 +58,18 @@
                                     ?>
                             </div>
 
+                            <hr>
 
                             <div class="mbr-section-btn item-footer mt-2">
+
                                 <a href="{{ route( 'downloadArticle', $article->file )}}"
                                    class="btn btn-primary item-btn display-7">Yuklab olish </a>
+
                             </div>
                             <p class="cost mbr-fonts-style display-10"><i
                                     class="fa fa-download"></i> {{ $article->eye }}
                             </p>
+
 
                         </div>
                     </div>
