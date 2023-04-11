@@ -44,14 +44,14 @@
 
                             <div class="">
                                     <?php
-                                if (strlen($article->description) < 100) {
+                                if (strlen($article->description) < 200) {
                                     ?>
                                 <p class="mbr-text mbr-fonts-style display-7"> {{ $article->description }} </p>
                                     <?php
                                 }
                                 else {
                                     ?>
-                                <p class="mbr-text mbr-fonts-style display-7"> {{ substr($article->description,0,100 )}}
+                                <p class="mbr-text mbr-fonts-style display-7"> {{ substr($article->description,0,200 )}}
                                     ... </p>
                                     <?php
                                 }
